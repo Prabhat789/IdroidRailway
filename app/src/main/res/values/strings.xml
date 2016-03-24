@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">IdroidRailway</string>
+
+    <string name="drawer_open"></string>
+    <string name="drawer_close"></string>
+    <string name="home">Home</string>
+    <string name="alerts">Alerts</string>
+    <string name="book_ticket">Book Ticket</string>
+    <string name="got_board">Got Board</string>
+    <string name="settings">Settings</string>
+    <string name="chat_room">Chat Rooms</string>
+    <string name="rating">Ratings</string>
+
 </resources>
