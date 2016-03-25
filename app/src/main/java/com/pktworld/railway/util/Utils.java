@@ -39,7 +39,7 @@ public class Utils {
         TextView txtMsg = (TextView)layout.findViewById(R.id.txtToast);
         txtMsg.setText(msg);
         Toast toast = new Toast(mContext);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(Toast.LENGTH_LONG);
         //toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM, 0, 0);
         toast.setView(layout);
         toast.show();
