@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/smoke_white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Live Status"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:background="@drawable/btn_rounded_corner_white"
+                android:id="@+id/btnLiveStatus" />
+
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="PNR Status"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:background="@drawable/btn_rounded_corner_white"/>
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Search Train"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:background="@drawable/btn_rounded_corner_white"/>
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Seat Availability"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:background="@drawable/btn_rounded_corner_white"/>
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Train Route"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:background="@drawable/btn_rounded_corner_white"/>
+
+
+        </LinearLayout>
+
+</LinearLayout>

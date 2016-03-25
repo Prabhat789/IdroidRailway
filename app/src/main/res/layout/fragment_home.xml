@@ -20,7 +20,7 @@
             android:hint="Find your train detail"
             android:textSize="@dimen/very_very_small"
             android:paddingLeft="15dp"
-            android:background="@drawable/edit_rounded_corner_white"
+            android:background="@drawable/edit_rounded_corner_smoke_white"
             android:layout_marginRight="30dp"
             />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:clickable="false"
         android:orientation="horizontal">
-        <Button
+        <com.pktworld.railway.util.CustomButton
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.50"
@@ -42,7 +42,7 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/small_text"
             android:textAllCaps="false"/>
-        <Button
+        <com.pktworld.railway.util.CustomButton
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="0.50"
