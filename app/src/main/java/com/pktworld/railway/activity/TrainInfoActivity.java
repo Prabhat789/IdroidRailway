@@ -17,7 +17,7 @@ import com.pktworld.railway.R;
 public class TrainInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = TrainInfoActivity.class.getSimpleName();
-    private Button btnLiveStatus;
+    private Button btnLiveStatus, btnPnrStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,9 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
 
 
         btnLiveStatus = (Button)findViewById(R.id.btnLiveStatus);
+        btnPnrStatus = (Button)findViewById(R.id.btnPnrStatus);
         btnLiveStatus.setOnClickListener(this);
+        btnPnrStatus.setOnClickListener(this);
 
 
     }
@@ -58,6 +60,9 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (v == btnLiveStatus){
             Intent i = new Intent(TrainInfoActivity.this,TrainLiveStatusActivity.class);
+            startActivity(i);
+        }else if (v == btnPnrStatus){
+            Intent i = new Intent(TrainInfoActivity.this,PnrStatusActivity.class);
             startActivity(i);
         }
     }

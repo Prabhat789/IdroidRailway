@@ -24,6 +24,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.1.1'
-    compile files('libs/android-async-http-1.4.8.jar')
-    compile files('libs/http-core-4.1.jar')
+    compile 'com.code-troopers.betterpickers:library:2.2.1'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.google.code.gson:gson:2.2.4'
 }
