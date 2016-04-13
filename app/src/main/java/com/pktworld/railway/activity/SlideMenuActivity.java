@@ -25,6 +25,11 @@ import com.pktworld.railway.fragments.GotBoardFragment;
 import com.pktworld.railway.fragments.HomeFragment;
 import com.pktworld.railway.fragments.RatingsFragments;
 import com.pktworld.railway.fragments.SettingsFragment;
+import com.pktworld.railway.util.ApplicationConstants;
+import com.pktworld.railway.util.Utils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by ubuntu1 on 24/3/16.
@@ -49,6 +54,9 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
         mTitle = (TextView) mToolbar.findViewById(R.id.txtToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        if (isLycenceExpire()){
+            finish();
+        }
         drawerFragment = (FragmentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
@@ -137,6 +145,18 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
     protected void onDestroy() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
         super.onDestroy();
+    }
+
+
+   private boolean isLycenceExpire(){
+       String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+       int dayCount = Utils.get_count_of_days(currentDate, ApplicationConstants.EXPIRED_DATE);
+       if (dayCount == 0){
+           Utils.showToastMessage(SlideMenuActivity.this,"Licence Expired !");
+           return true;
+       }else {
+           return false;
+       }
     }
 }
 
