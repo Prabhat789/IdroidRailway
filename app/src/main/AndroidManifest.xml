@@ -51,6 +51,18 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".activity.FareEnquryActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".activity.TrainRouteActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

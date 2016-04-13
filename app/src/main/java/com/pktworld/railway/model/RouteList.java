@@ -21,6 +21,7 @@ public class RouteList {
     String day;
     Station station_;
 
+
     public String getActdep() {
         return actdep;
     }

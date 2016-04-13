@@ -14,15 +14,12 @@ import android.text.InputFilter;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -341,7 +338,7 @@ public class SeatAvilabilityActivity extends AppCompatActivity implements View.O
 
                         mAdapter = new AvailabilityAdapter(SeatAvilabilityActivity.this,response.getAvailability());
                         listAvailability.setAdapter(mAdapter);
-                        setListViewHeightBasedOnChildren(listAvailability);
+                        Utils.setListViewHeightBasedOnChildren(listAvailability);
 
                     }else if (response.getResponse_code().equals("204")){
                         llDatacont.setVisibility(View.VISIBLE);
@@ -354,7 +351,7 @@ public class SeatAvilabilityActivity extends AppCompatActivity implements View.O
                                 +", "+response.getLast_updated().getDate());
                         mAdapter = new AvailabilityAdapter(SeatAvilabilityActivity.this,response.getAvailability());
                         listAvailability.setAdapter(mAdapter);
-                        setListViewHeightBasedOnChildren(listAvailability);
+                        Utils.setListViewHeightBasedOnChildren(listAvailability);
 
                         Utils.showToastMessage(SeatAvilabilityActivity.this,response.getError());
                     }else{
@@ -386,24 +383,5 @@ public class SeatAvilabilityActivity extends AppCompatActivity implements View.O
         };
     }
 
-    public static void setListViewHeightBasedOnChildren(ListView listView) {
-        ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null)
-            return;
 
-        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
-        int totalHeight = 0;
-        View view = null;
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            view = listAdapter.getView(i, view, listView);
-            if (i == 0)
-                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, WindowManager.LayoutParams.WRAP_CONTENT));
-
-            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-            totalHeight += view.getMeasuredHeight();
-        }
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-        listView.setLayoutParams(params);
-    }
 }

@@ -17,7 +17,8 @@ import com.pktworld.railway.R;
 public class TrainInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = TrainInfoActivity.class.getSimpleName();
-    private Button btnLiveStatus, btnPnrStatus,btnSeatAvailability;
+    private Button btnLiveStatus, btnPnrStatus,btnSeatAvailability,
+                    btnFareEnqury,btnTrainRoute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,13 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
         btnLiveStatus = (Button)findViewById(R.id.btnLiveStatus);
         btnPnrStatus = (Button)findViewById(R.id.btnPnrStatus);
         btnSeatAvailability = (Button)findViewById(R.id.btnSeatAvailability);
+        btnFareEnqury = (Button)findViewById(R.id.btnFareEnqury);
+        btnTrainRoute = (Button)findViewById(R.id.btnTrainRoute);
         btnLiveStatus.setOnClickListener(this);
         btnPnrStatus.setOnClickListener(this);
         btnSeatAvailability.setOnClickListener(this);
+        btnFareEnqury.setOnClickListener(this);
+        btnTrainRoute.setOnClickListener(this);
 
 
     }
@@ -68,6 +73,12 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
             startActivity(i);
         }else if (v == btnSeatAvailability){
             Intent i = new Intent(TrainInfoActivity.this,SeatAvilabilityActivity.class);
+            startActivity(i);
+        }else if (v == btnFareEnqury){
+            Intent i = new Intent(TrainInfoActivity.this,FareEnquryActivity.class);
+            startActivity(i);
+        }else if (v == btnTrainRoute){
+            Intent i = new Intent(TrainInfoActivity.this,TrainRouteActivity.class);
             startActivity(i);
         }
     }

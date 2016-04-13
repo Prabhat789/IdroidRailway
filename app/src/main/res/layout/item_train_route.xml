@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:elevation="5dp"
+        android:orientation="vertical">
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtNumber"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtStationName"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtState"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtDay"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtDistance"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtScArrival"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtScDeparture"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
