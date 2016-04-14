@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,10 +18,16 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.pktworld.railway.R;
+import com.pktworld.railway.adapter.TrainBetweenStationsAdapter;
+import com.pktworld.railway.util.ApplicationConstants;
+import com.pktworld.railway.util.GsonRequestResponseHelper;
 import com.pktworld.railway.util.Utils;
 
 import org.json.JSONArray;
@@ -39,7 +46,9 @@ public class TrainBetweenStationActivity extends AppCompatActivity implements Vi
     private ListView listTrains;
     private EditText editSourcestation, editDestinationStation;
     private static Button btnSearch,btnDate;
+
     private static String date1 = null;
+    private TrainBetweenStationsAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,11 +97,11 @@ public class TrainBetweenStationActivity extends AppCompatActivity implements Vi
         if (v == btnSearch){
             if (validate()){
                 if (Utils.isConnected(TrainBetweenStationActivity.this)){
-                    //getTrains(TrainBetweenStationActivity.this, date1);
+                    getTrains(TrainBetweenStationActivity.this, date1);
                 }
-            }else if (v == btnDate){
-                pickDate();
             }
+        }else if (v == btnDate){
+            pickDate();
         }
     }
 
@@ -128,7 +137,7 @@ public class TrainBetweenStationActivity extends AppCompatActivity implements Vi
             }else {
                 dayS = ""+day;
             }
-            String date =  dayS + "-" + monthS + "-" + year;
+            String date =  dayS + "-" + monthS;
             date1 = date;
             btnDate.setText(date);
 
@@ -151,24 +160,22 @@ public class TrainBetweenStationActivity extends AppCompatActivity implements Vi
         }
     }
 
-    /*private void getSeatAvailability(Context mContext, String date) {
+    private void getTrains(Context mContext, String date) {
         mProgressDialog = ProgressDialog.show(mContext, "",
                 getResources().getString(R.string.processing), true);
         mProgressDialog.show();
-        String REQUEST_URL = ApplicationConstants.RAILWAY_API_URL+"/fare/train/"+
-                editTrainNumber.getText().toString().trim()+"/source/"+editSourcestation.getText().toString()+
-                "/dest/"+editDestinationStation.getText().toString()+"/age/"+editAge.getText().toString()+"/quota/"
-                +quotaString+"/doj/"+date+"/apikey/"+ApplicationConstants.RAILWAY_API_KEY;
+        String REQUEST_URL = ApplicationConstants.RAILWAY_API_URL+"between/source/"+editSourcestation.getText().toString()+
+                "/dest/"+editDestinationStation.getText().toString()+"/date/"+date+"/apikey/"+ApplicationConstants.RAILWAY_API_KEY;
 
         Log.e(TAG, REQUEST_URL);
 
         mRequestQueue = Volley.newRequestQueue(mContext);
 
         // Request with API parameters
-        GsonRequestResponseHelper<JSONObject> myReq = new GsonRequestResponseHelper<JSONObject>(
+        GsonRequestResponseHelper<String> myReq = new GsonRequestResponseHelper<String>(
                 Request.Method.GET,
                 REQUEST_URL,
-                JSONObject.class,
+                String.class,
                 createMyReqSuccessListener(),
                 createMyReqErrorListener());
 
@@ -177,25 +184,24 @@ public class TrainBetweenStationActivity extends AppCompatActivity implements Vi
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         mRequestQueue.add(myReq);
-    }*/
+    }
 
-    private Response.Listener<JSONObject> createMyReqSuccessListener() {
-        return new Response.Listener<JSONObject>() {
+    private Response.Listener<String> createMyReqSuccessListener() {
+        return new Response.Listener<String>() {
             @Override
-            public void onResponse(JSONObject response) {
+            public void onResponse(String response) {
                 try {
                     if (mProgressDialog.isShowing()){
                         mProgressDialog.dismiss();
                     }
-                    if (response.getString("response_code").equals("200")){
-                        int trainCount = response.getInt("total");
-                        JSONArray train = response.getJSONArray("train");
-                        for (int i = 0; i<= trainCount; i++){
-                            JSONObject singleOne = train.getJSONObject(i);
+                    Log.e(TAG,response.toString());
+                    JSONObject response1 = new JSONObject(response);
+                    if (response1.getString("response_code").equals("200")){
+                        //int trainCount = response.getInt("total");
+                        JSONArray train = response1.getJSONArray("train");
 
-                        }
-                       /* mAdapter = new FareAdapter(FareEnquryActivity.this,response.getFare());
-                        listAvailability.setAdapter(mAdapter);*/
+                        mAdapter = new TrainBetweenStationsAdapter(TrainBetweenStationActivity.this,train);
+                        listTrains.setAdapter(mAdapter);
                         Utils.setListViewHeightBasedOnChildren(listTrains);
                     }else{
                         Utils.showToastMessage(TrainBetweenStationActivity.this,getString(R.string.empty_response));
