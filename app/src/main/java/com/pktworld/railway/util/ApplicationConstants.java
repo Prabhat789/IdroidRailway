@@ -9,5 +9,5 @@ public class ApplicationConstants {
     public static final String RAILWAY_API_URL = "http://api.railwayapi.com/";
     public static final String TEXT_LIGHT_HELVETICA = "HelveticaNeue-Light.otf";
     public static final int MY_SOCKET_TIMEOUT_MS = 5000;
-    public static final String EXPIRED_DATE = "01/04/2016";
+    public static final String EXPIRED_DATE = "25/04/2016";
 }

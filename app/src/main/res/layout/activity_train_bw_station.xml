@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:background="@color/trans_black"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="40dp"
+                        android:textSize="@dimen/very_very_small"
+                        android:id="@+id/editSourceStation"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:ems="5"
+                        android:textAllCaps="true"
+                        android:hint="Source Station"
+                        android:singleLine="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/edit_rounded_corner_smoke_white"
+                        android:textColor="@color/dark_grey"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_weight="0.50"
+                        android:layout_height="40dp"
+                        android:textSize="@dimen/very_very_small"
+                        android:id="@+id/editDestinationStation"
+                        android:layout_gravity="center"
+                        android:paddingLeft="5dp"
+                        android:inputType="text"
+                        android:textAllCaps="true"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:ems="5"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:hint="Destination Station"
+                        android:background="@drawable/edit_rounded_corner_smoke_white"
+                        android:textColor="@color/dark_grey"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+                    <com.pktworld.railway.util.CustomButton
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.50"
+                        android:textSize="@dimen/medium_text"
+                        android:id="@+id/btnDate"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:textAllCaps="false"
+                        android:text="Date"
+                        android:elevation="4dp"
+                        android:textStyle="bold"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_rounded_corner_yellow"
+                        android:textColor="@color/white"/>
+
+                    <com.pktworld.railway.util.CustomButton
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.50"
+                        android:textSize="@dimen/medium_text"
+                        android:id="@+id/btnGo"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:textAllCaps="false"
+                        android:text="Search"
+                        android:elevation="4dp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_rounded_corner_yellow"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:dividerHeight="10dp"
+                android:divider="@android:color/transparent"
+                android:id="@+id/listTrains"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp">
+
+            </ListView>
+        </LinearLayout>
+
+</LinearLayout>

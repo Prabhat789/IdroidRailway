@@ -63,6 +63,12 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".activity.TrainBetweenStationActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

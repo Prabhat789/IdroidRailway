@@ -18,7 +18,7 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
 
     private static final String TAG = TrainInfoActivity.class.getSimpleName();
     private Button btnLiveStatus, btnPnrStatus,btnSeatAvailability,
-                    btnFareEnqury,btnTrainRoute;
+                    btnFareEnqury,btnTrainRoute,btnTrainbwStation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,13 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
         btnSeatAvailability = (Button)findViewById(R.id.btnSeatAvailability);
         btnFareEnqury = (Button)findViewById(R.id.btnFareEnqury);
         btnTrainRoute = (Button)findViewById(R.id.btnTrainRoute);
+        btnTrainbwStation = (Button)findViewById(R.id.btnTrainbwStation);
         btnLiveStatus.setOnClickListener(this);
         btnPnrStatus.setOnClickListener(this);
         btnSeatAvailability.setOnClickListener(this);
         btnFareEnqury.setOnClickListener(this);
         btnTrainRoute.setOnClickListener(this);
+        btnTrainbwStation.setOnClickListener(this);
 
 
     }
@@ -79,6 +81,9 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
             startActivity(i);
         }else if (v == btnTrainRoute){
             Intent i = new Intent(TrainInfoActivity.this,TrainRouteActivity.class);
+            startActivity(i);
+        } else if (v == btnTrainbwStation){
+            Intent i = new Intent(TrainInfoActivity.this,TrainBetweenStationActivity.class);
             startActivity(i);
         }
     }

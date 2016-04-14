@@ -151,7 +151,7 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
    private boolean isLycenceExpire(){
        String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
        int dayCount = Utils.get_count_of_days(currentDate, ApplicationConstants.EXPIRED_DATE);
-       if (dayCount == 0){
+       if (dayCount <= 0){
            Utils.showToastMessage(SlideMenuActivity.this,"Licence Expired !");
            return true;
        }else {
