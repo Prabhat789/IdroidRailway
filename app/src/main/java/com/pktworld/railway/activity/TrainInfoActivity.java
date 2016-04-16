@@ -18,7 +18,8 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
 
     private static final String TAG = TrainInfoActivity.class.getSimpleName();
     private Button btnLiveStatus, btnPnrStatus,btnSeatAvailability,
-                    btnFareEnqury,btnTrainRoute,btnTrainbwStation;
+                    btnFareEnqury,btnTrainRoute,btnTrainbwStation,
+                    btnCancelledTrain,btnTrainArrivalsAtStation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +40,16 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
         btnFareEnqury = (Button)findViewById(R.id.btnFareEnqury);
         btnTrainRoute = (Button)findViewById(R.id.btnTrainRoute);
         btnTrainbwStation = (Button)findViewById(R.id.btnTrainbwStation);
+        btnCancelledTrain = (Button)findViewById(R.id.btnCancelTrain);
+        btnTrainArrivalsAtStation = (Button)findViewById(R.id.btnTrainArrivesAtStation);
         btnLiveStatus.setOnClickListener(this);
         btnPnrStatus.setOnClickListener(this);
         btnSeatAvailability.setOnClickListener(this);
         btnFareEnqury.setOnClickListener(this);
         btnTrainRoute.setOnClickListener(this);
         btnTrainbwStation.setOnClickListener(this);
-
+        btnCancelledTrain.setOnClickListener(this);
+        btnTrainArrivalsAtStation.setOnClickListener(this);
 
     }
 
@@ -84,6 +88,12 @@ public class TrainInfoActivity extends AppCompatActivity implements View.OnClick
             startActivity(i);
         } else if (v == btnTrainbwStation){
             Intent i = new Intent(TrainInfoActivity.this,TrainBetweenStationActivity.class);
+            startActivity(i);
+        }else if (v == btnCancelledTrain){
+            Intent i = new Intent(TrainInfoActivity.this,CancelTrainActivity.class);
+            startActivity(i);
+        }else if (v == btnTrainArrivalsAtStation){
+            Intent i = new Intent(TrainInfoActivity.this,TrainArrivalsAtStationActivity.class);
             startActivity(i);
         }
     }

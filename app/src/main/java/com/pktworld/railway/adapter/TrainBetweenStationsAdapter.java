@@ -100,22 +100,22 @@ public class TrainBetweenStationsAdapter extends BaseAdapter {
             holder.txtFrom.setText("From : "+json_data.getJSONObject("from").getString("name")
                     +" ("+json_data.getJSONObject("from").getString("code")+")");
             holder.txtTo.setText("To : "+json_data.getJSONObject("to").getString("name")
-                    +" ("+json_data.getJSONObject("from").getString("code")+")");
-          /*  holder.txtSun.setText(categoryList.get(position).getStatus());
-            holder.txtMon.setText(categoryList.get(position).getStatus());
-            holder.txtTue.setText(categoryList.get(position).getStatus());
-            holder.txtWed.setText(categoryList.get(position).getStatus());
-            holder.txtThu.setText(categoryList.get(position).getStatus());
-            holder.txtFri.setText(categoryList.get(position).getStatus());
-            holder.txtSat.setText(categoryList.get(position).getStatus());
-            holder.txtFc.setText(categoryList.get(position).getStatus());
-            holder.txt3E.setText(categoryList.get(position).getStatus());
-            holder.txtCc.setText(categoryList.get(position).getStatus());
-            holder.txtSl.setText(categoryList.get(position).getStatus());
-            holder.txt2s.setText(categoryList.get(position).getStatus());
-            holder.txt2a.setText(categoryList.get(position).getStatus());
-            holder.txt3a.setText(categoryList.get(position).getStatus());
-            holder.txt1a.setText(categoryList.get(position).getStatus());*/
+                    +" ("+json_data.getJSONObject("to").getString("code")+")");
+            holder.txtSun.setText(json_data.getJSONArray("days").getJSONObject(0).getString("runs"));
+            holder.txtMon.setText(json_data.getJSONArray("days").getJSONObject(1).getString("runs"));
+            holder.txtTue.setText(json_data.getJSONArray("days").getJSONObject(2).getString("runs"));
+            holder.txtWed.setText(json_data.getJSONArray("days").getJSONObject(3).getString("runs"));
+            holder.txtThu.setText(json_data.getJSONArray("days").getJSONObject(4).getString("runs"));
+            holder.txtFri.setText(json_data.getJSONArray("days").getJSONObject(5).getString("runs"));
+            holder.txtSat.setText(json_data.getJSONArray("days").getJSONObject(6).getString("runs"));
+            holder.txtFc.setText(json_data.getJSONArray("classes").getJSONObject(0).getString("available"));
+            holder.txt3E.setText(json_data.getJSONArray("classes").getJSONObject(1).getString("available"));
+            holder.txtCc.setText(json_data.getJSONArray("classes").getJSONObject(2).getString("available"));
+            holder.txtSl.setText(json_data.getJSONArray("classes").getJSONObject(3).getString("available"));
+            holder.txt2s.setText(json_data.getJSONArray("classes").getJSONObject(4).getString("available"));
+            holder.txt2a.setText(json_data.getJSONArray("classes").getJSONObject(5).getString("available"));
+            holder.txt3a.setText(json_data.getJSONArray("classes").getJSONObject(6).getString("available"));
+            holder.txt1a.setText(json_data.getJSONArray("classes").getJSONObject(7).getString("available"));
         } catch (JSONException e) {
             e.printStackTrace();
         }

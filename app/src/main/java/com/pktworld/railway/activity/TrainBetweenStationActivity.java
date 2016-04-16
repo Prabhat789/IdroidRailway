@@ -23,11 +23,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.pktworld.railway.R;
 import com.pktworld.railway.adapter.TrainBetweenStationsAdapter;
 import com.pktworld.railway.util.ApplicationConstants;
-import com.pktworld.railway.util.GsonRequestResponseHelper;
 import com.pktworld.railway.util.Utils;
 
 import org.json.JSONArray;
@@ -172,61 +172,54 @@ public class TrainBetweenStationActivity extends AppCompatActivity implements Vi
         mRequestQueue = Volley.newRequestQueue(mContext);
 
         // Request with API parameters
-        GsonRequestResponseHelper<String> myReq = new GsonRequestResponseHelper<String>(
-                Request.Method.GET,
-                REQUEST_URL,
-                String.class,
-                createMyReqSuccessListener(),
-                createMyReqErrorListener());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, REQUEST_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        try {
 
-        myReq.setRetryPolicy(new DefaultRetryPolicy(
-                ApplicationConstants.MY_SOCKET_TIMEOUT_MS,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        mRequestQueue.add(myReq);
-    }
+                            Log.e(TAG,response.toString());
+                            JSONObject response1 = new JSONObject(response);
+                            if (response1.getString("response_code").equals("200")){
+                                JSONArray train = response1.getJSONArray("train");
 
-    private Response.Listener<String> createMyReqSuccessListener() {
-        return new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    if (mProgressDialog.isShowing()){
-                        mProgressDialog.dismiss();
+                                mAdapter = new TrainBetweenStationsAdapter(TrainBetweenStationActivity.this,train);
+                                listTrains.setAdapter(mAdapter);
+                                Utils.setListViewHeightBasedOnChildren(listTrains);
+                                if (mProgressDialog.isShowing()){
+                                    mProgressDialog.dismiss();
+                                }
+                            }else{
+                                if (mProgressDialog.isShowing()){
+                                    mProgressDialog.dismiss();
+                                }
+                                Utils.showToastMessage(TrainBetweenStationActivity.this,getString(R.string.empty_response));
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            if (mProgressDialog.isShowing()){
+                                mProgressDialog.dismiss();
+                            }
+                            Log.e(TAG, "TryCatch");
+                        }
                     }
-                    Log.e(TAG,response.toString());
-                    JSONObject response1 = new JSONObject(response);
-                    if (response1.getString("response_code").equals("200")){
-                        //int trainCount = response.getInt("total");
-                        JSONArray train = response1.getJSONArray("train");
-
-                        mAdapter = new TrainBetweenStationsAdapter(TrainBetweenStationActivity.this,train);
-                        listTrains.setAdapter(mAdapter);
-                        Utils.setListViewHeightBasedOnChildren(listTrains);
-                    }else{
-                        Utils.showToastMessage(TrainBetweenStationActivity.this,getString(R.string.empty_response));
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    if (mProgressDialog.isShowing()){
-                        mProgressDialog.dismiss();
-                    }
-                    Log.e(TAG, "TryCatch");
-                }
-            };
-        };
-    }
-
-    private Response.ErrorListener createMyReqErrorListener() {
-        return new Response.ErrorListener() {
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (mProgressDialog.isShowing()){
                     mProgressDialog.dismiss();
                 } Log.e(TAG, error.toString());
             }
-        };
+        });
+
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                ApplicationConstants.MY_SOCKET_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        mRequestQueue.add(stringRequest);
     }
 
 }

@@ -4,12 +4,16 @@
     android:layout_height="match_parent">
 
     <include layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/smoke_white">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:background="@color/smoke_white"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <com.pktworld.railway.util.CustomButton
@@ -72,8 +76,30 @@
                 android:elevation="5dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnTrainbwStation" />
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Cancelled Trains"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:background="@drawable/btn_rounded_corner_white"
+                android:id="@+id/btnCancelTrain" />
 
+            <com.pktworld.railway.util.CustomButton
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="Train Arri at Station"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/medium_text"
+                android:elevation="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_rounded_corner_white"
+                android:id="@+id/btnTrainArrivesAtStation" />
 
         </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

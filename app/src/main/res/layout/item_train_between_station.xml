@@ -63,7 +63,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="10dp"
         android:orientation="vertical"
         android:background="@color/dark_grey"
         android:id="@+id/lldataCont">
@@ -221,8 +224,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="10dp"
         android:background="@color/dark_grey"
         android:id="@+id/lldataCont1">
 
@@ -235,11 +241,11 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/very_very_small"
+                android:textSize="@dimen/very_small"
                 android:textColor="@color/bpDarker_red"
-                android:text="Classes"
-                android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:text="CLASSES"
+                android:gravity="left|center_vertical"
+                android:layout_weight="0.20"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -247,7 +253,7 @@
                 android:textColor="@color/white"
                 android:text="FC"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -255,7 +261,7 @@
                 android:textColor="@color/white"
                 android:text="3E"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -263,7 +269,7 @@
                 android:textColor="@color/white"
                 android:text="CC"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -271,7 +277,7 @@
                 android:textColor="@color/white"
                 android:text="SL"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -279,7 +285,7 @@
                 android:textColor="@color/white"
                 android:text="2S"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -287,7 +293,7 @@
                 android:text="2A"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -295,7 +301,7 @@
                 android:textColor="@color/white"
                 android:text="3A"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -303,7 +309,7 @@
                 android:textColor="@color/white"
                 android:text="1A"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -315,11 +321,11 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/very_very_small"
+                android:textSize="@dimen/very_small"
                 android:textColor="@color/bpDarker_red"
                 android:text="AVAIL"
-                android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:gravity="left|center_vertical"
+                android:layout_weight="0.20"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -335,7 +341,7 @@
                 android:textColor="@color/white"
                 android:id="@+id/txt3E"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -343,7 +349,7 @@
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:id="@+id/txtCc"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -351,7 +357,7 @@
                 android:textColor="@color/white"
                 android:id="@+id/txtSl"
                 android:gravity="center"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -359,7 +365,7 @@
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:id="@+id/txt2S"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -367,7 +373,7 @@
                 android:gravity="center"
                 android:id="@+id/txt2A"
                 android:textColor="@color/white"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -375,7 +381,7 @@
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:id="@+id/txt3A"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
             <com.pktworld.railway.util.CustomTextLite
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -383,7 +389,7 @@
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:id="@+id/txt1A"
-                android:layout_weight="0.111"/>
+                android:layout_weight="0.10"/>
         </LinearLayout>
 
     </LinearLayout>

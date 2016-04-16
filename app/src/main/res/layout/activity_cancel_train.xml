@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.pktworld.railway.util.CustomTextLite
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="It is not guaranteed that you will get back results for dates more than 5 days in the past. "
+                android:textSize="@dimen/very_small"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@color/trans_black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="6dp"
+                android:background="@color/trans_black"
+                android:orientation="horizontal">
+                <com.pktworld.railway.util.CustomButton
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.50"
+                    android:textSize="@dimen/medium_text"
+                    android:id="@+id/btnDate"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:textAllCaps="false"
+                    android:text="Date"
+                    android:elevation="4dp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btn_rounded_corner_yellow"
+                    android:textColor="@color/white"/>
+
+                <com.pktworld.railway.util.CustomButton
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.50"
+                    android:textSize="@dimen/medium_text"
+                    android:id="@+id/btnGo"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:textAllCaps="false"
+                    android:text="Search"
+                    android:elevation="4dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_rounded_corner_yellow"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="7dp"
+                android:dividerHeight="10dp"
+                android:divider="@android:color/transparent"
+                android:id="@+id/listTrains"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp">
+
+            </ListView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

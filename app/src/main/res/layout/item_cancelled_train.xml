@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtNumber"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtName"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtType"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtStartTime"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtSource"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:id="@+id/txtDestination"/>
+        </LinearLayout>
+
+</LinearLayout>

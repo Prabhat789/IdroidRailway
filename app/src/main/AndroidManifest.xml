@@ -69,6 +69,18 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".activity.CancelTrainActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".activity.TrainArrivalsAtStationActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>
