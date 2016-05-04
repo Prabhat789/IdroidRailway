@@ -27,6 +27,18 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".activity.LoginActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".activity.SignUpActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity android:name=".activity.TrainInfoActivity"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="stateAlwaysHidden"

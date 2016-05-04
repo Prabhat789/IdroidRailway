@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
 
             public void run() {
                 // TODO Auto-generated method stub
-                Intent i = new Intent(SplashActivity.this, SlideMenuActivity.class);
+                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }

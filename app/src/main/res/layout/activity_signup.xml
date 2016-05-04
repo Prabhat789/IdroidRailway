@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="First Name"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:id="@+id/editFirstName"/>
+
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Last Name"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:id="@+id/editLastName"
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Email"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:id="@+id/editEmail"
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Mobile Number"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:id="@+id/editMobile"
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:id="@+id/editPassword"
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Confirm Password"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:id="@+id/editConPassword"
+                android:layout_marginTop="10dp"/>
+
+
+
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/dark_grey"
+                android:text="Signup"
+                android:textAllCaps="true"
+                android:layout_marginTop="25dp"
+                android:id="@+id/btnSignUp"
+                android:background="@drawable/btn_rounded_corner_yellow"/>
+
+
+
+        </LinearLayout>
+
+
+</LinearLayout>

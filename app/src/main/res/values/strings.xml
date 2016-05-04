@@ -15,5 +15,6 @@
     <string name="chat_room">Chat Rooms</string>
     <string name="rating">Ratings</string>
     <string name="live_status_info">Enter train number and Date of Journey\nto get the live status</string>
+    <string name="invalid_user">Invalid Email/Password</string>
 
 </resources>
