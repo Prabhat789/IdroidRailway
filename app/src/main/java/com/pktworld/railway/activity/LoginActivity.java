@@ -131,7 +131,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 try {
 
                     if (response.getResponse().equals("Success")){
-
                         Intent i = new Intent(LoginActivity.this,SlideMenuActivity.class);
                         startActivity(i);
                         finish();

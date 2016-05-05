@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setSupportActionBar(toolbar);
         TextView mTitle = (TextView) toolbar.findViewById(R.id.txtToolbar);
         mTitle.setText("SignUp");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 
         editEmail = (EditText)findViewById(R.id.editEmail);
@@ -56,6 +58,22 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnSignUp = (Button)findViewById(R.id.btnSignUp);
 
         btnSignUp.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     @Override
@@ -127,15 +145,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         Intent i = new Intent(SignUpActivity.this,LoginActivity.class);
                         startActivity(i);
                         finish();
-
+                        Utils.showToastMessage(SignUpActivity.this, response.getMessage());
                     }else{
-
                         Utils.showToastMessage(SignUpActivity.this,getString(R.string.unable_to_process_request));
                     }
 
                 } catch (Exception e) {
                     e.printStackTrace();
-
                     Log.e(TAG, "TryCatch");
                 }
             };
@@ -149,6 +165,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 if (mProgressDialog.isShowing()){
                     mProgressDialog.dismiss();
                 } Log.e(TAG, error.toString());
+                Utils.showToastMessage(SignUpActivity.this, getString(R.string.unable_to_process_request));
             }
         };
 
