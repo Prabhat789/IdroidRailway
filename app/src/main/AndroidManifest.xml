@@ -93,6 +93,18 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".activity.BookTicketActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".activity.SettingActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

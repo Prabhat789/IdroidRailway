@@ -11,5 +11,6 @@ public class ApplicationConstants {
     public static final int MY_SOCKET_TIMEOUT_MS = 5000;
     public static final String EXPIRED_DATE = "10/05/2016";
     public static final String BASEURL = "http://railway.snowlite.co.in/userjson.asmx";
+    public static final String IRCTC_URL = "https://www.irctc.co.in/eticketing/loginHome.jsf";
 
 }

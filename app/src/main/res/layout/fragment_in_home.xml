@@ -93,7 +93,7 @@
                 android:layout_marginRight="30dp"
                 android:clickable="true"
                 android:elevation="3dp"
-                android:id="@+id/llBookTickets"
+                android:id="@+id/llAlerts"
                 android:background="@color/white"
                 android:layout_marginLeft="30dp">
 
@@ -155,7 +155,7 @@
                 android:layout_marginRight="30dp"
                 android:clickable="true"
                 android:elevation="3dp"
-                android:id="@+id/llGotBoard"
+                android:id="@+id/llBookTicket"
                 android:background="@color/white"
                 android:layout_marginLeft="30dp">
 
@@ -217,9 +217,10 @@
                 android:layout_marginRight="30dp"
                 android:clickable="true"
                 android:elevation="3dp"
-                android:id="@+id/llSettings"
+                android:id="@+id/llGotBoard"
                 android:background="@color/white"
-                android:layout_marginLeft="30dp">
+                android:layout_marginLeft="30dp"
+                android:nestedScrollingEnabled="false">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -280,7 +281,7 @@
                 android:layout_marginRight="30dp"
                 android:clickable="true"
                 android:elevation="3dp"
-                android:id="@+id/llAlerts"
+                android:id="@+id/llSettings"
                 android:layout_marginBottom="15dp"
                 android:background="@color/white"
                 android:layout_marginLeft="30dp">

@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.pktworld.railway.R;
+import com.pktworld.railway.activity.BookTicketActivity;
+import com.pktworld.railway.activity.SettingActivity;
 import com.pktworld.railway.activity.TrainInfoActivity;
 
 /**
@@ -25,7 +27,11 @@ public class FragmentInHome extends Fragment implements View.OnClickListener{
         View rootView = inflater.inflate(R.layout.fragment_in_home, container, false);
 
         llTrainInfo = (LinearLayout)rootView.findViewById(R.id.llTrainInfo);
+        llBookTickets = (LinearLayout)rootView.findViewById(R.id.llBookTicket);
+        llSettings = (LinearLayout)rootView.findViewById(R.id.llSettings);
+        llBookTickets.setOnClickListener(this);
         llTrainInfo.setOnClickListener(this);
+        llSettings.setOnClickListener(this);
 
         return rootView;
 
@@ -36,6 +42,12 @@ public class FragmentInHome extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if (v == llTrainInfo){
             Intent i = new Intent(getActivity(), TrainInfoActivity.class);
+            startActivity(i);
+        }else if (v == llBookTickets){
+            Intent i = new Intent(getActivity(), BookTicketActivity.class);
+            startActivity(i);
+        }else if (v == llSettings){
+            Intent i = new Intent(getContext(), SettingActivity.class);
             startActivity(i);
         }
     }
