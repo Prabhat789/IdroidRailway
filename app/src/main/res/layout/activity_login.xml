@@ -1,58 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
 
-    <include layout="@layout/toolbar"/>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:gravity="center">
-        <EditText
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:hint="Email"
-            android:ems="8"
-            android:singleLine="true"
-            android:textColor="@color/dark_grey"
-            android:id="@+id/editEmail"/>
+        android:id="@+id/LoginContainer"
+        android:clickable="true"
+        android:gravity="center_horizontal">
 
-        <EditText
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:hint="Password"
-            android:ems="8"
-            android:singleLine="true"
-            android:textColor="@color/dark_grey"
-            android:id="@+id/editPassword"
-            android:layout_marginTop="15dp"/>
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal"
+            android:textSize="35sp"
+            android:id="@+id/textView"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnLogin"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:id="@+id/linearLayout">
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:ems="8"
+                android:singleLine="true"
+                android:textColorHint="@color/smoke_white"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                android:id="@+id/editEmail"/>
+
+            <View
+                android:layout_width="240dp"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"/>
+
+            <EditText
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:ems="8"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColorHint="@color/smoke_white"
+                android:textColor="@color/white"
+                android:background="@android:color/transparent"
+                android:id="@+id/editPassword"
+                android:layout_marginTop="15dp"/>
+            <View
+                android:layout_width="240dp"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"/>
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="240dp"
+                android:layout_marginTop="8dp"
+                android:gravity="left|center_vertical"
+                android:layout_height="wrap_content"
+                android:text="  Save Password"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/white"
+                />
+
+        </LinearLayout>
 
 
         <Button
             android:layout_width="240dp"
             android:layout_height="40dp"
             android:textSize="@dimen/medium_text"
-            android:textColor="@color/dark_grey"
+            android:textColor="@color/white"
             android:text="Login"
             android:textAllCaps="true"
-            android:layout_marginTop="30dp"
             android:id="@+id/btnLogin"
-            android:background="@drawable/btn_rounded_corner_yellow"/>
+            android:layout_above="@+id/btnSignUp"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/login_btn"/>
         <Button
             android:layout_width="240dp"
             android:layout_height="40dp"
             android:textSize="@dimen/medium_text"
-            android:textColor="@color/dark_grey"
+            android:textColor="@color/white"
             android:text="Signup"
             android:textAllCaps="true"
-            android:layout_marginTop="10dp"
             android:id="@+id/btnSignUp"
-            android:background="@drawable/btn_rounded_corner_yellow"/>
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="80dp"
+            android:background="@color/login_btn"/>
 
 
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

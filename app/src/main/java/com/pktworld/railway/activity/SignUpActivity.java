@@ -1,17 +1,16 @@
 package com.pktworld.railway.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -21,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.pktworld.railway.R;
 import com.pktworld.railway.model.ServiceResponse;
+import com.pktworld.railway.parseutils.ParseSetUp;
 import com.pktworld.railway.util.ApplicationConstants;
 import com.pktworld.railway.util.GsonRequestResponseHelper;
 import com.pktworld.railway.util.Utils;
@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * Created by Prabhat on 05/05/16.
  */
-public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
+public class SignUpActivity extends Activity implements View.OnClickListener{
     private static final String TAG = SignUpActivity.class.getSimpleName();
     private Button btnSignUp;
     private EditText editEmail,editPassword,editFirstName,editLastName,editMobile,editConPass;
@@ -41,13 +41,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView mTitle = (TextView) toolbar.findViewById(R.id.txtToolbar);
         mTitle.setText("SignUp");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("");*/
 
         editEmail = (EditText)findViewById(R.id.editEmail);
         editPassword = (EditText)findViewById(R.id.editPassword);
@@ -94,23 +97,24 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         mProgressDialog.show();
         String REQUEST_URL = ApplicationConstants.BASEURL+url;
         Map<String,String> params = new HashMap<String, String>();
-        params.put("lsEmailId", editEmail.getText().toString().trim());
-        params.put("lsPassword", editPassword.getText().toString().trim());
         params.put("lsFirstName",editFirstName.getText().toString().trim());
         params.put("lsLastName",editLastName.getText().toString().trim());
+        params.put("lsEmailId", editEmail.getText().toString().trim());
+        params.put("lsPassword", editPassword.getText().toString().trim());
         params.put("lsCellphone",editMobile.getText().toString().trim());
-        params.put("lsParentPhone","");
-        params.put("lsParentPhone2","");
-        params.put("lsAddress", "");
-        params.put("lsState", "");
-        params.put("lsCity", "");
-        params.put("lsCountry", "");
-        params.put("lsZipcode", "");
-        params.put("lsLatitude", "");
-        params.put("lsLongitude", "");
+        params.put("lsParentPhone",editMobile.getText().toString().trim());
+        params.put("lsParentPhone2",editMobile.getText().toString().trim());
+        params.put("lsDob","07/10/1988");
+        params.put("lsAddress", "Unknown");
+        params.put("lsState", "Unknown");
+        params.put("lsCity", "Unknown");
+        params.put("lsCountry", "Unknown");
+        params.put("lsZipcode", "Unknown");
+        params.put("lsLatitude", "Unknown");
+        params.put("lsLongitude", "Unknown");
 
 
-        Log.e(TAG, REQUEST_URL);
+        Log.e(TAG, REQUEST_URL+" "+params.toString());
 
         mRequestQueue = Volley.newRequestQueue(mContext);
 
@@ -142,10 +146,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 try {
 
                     if (response.getResponse().equals("Success")){
-                        Intent i = new Intent(SignUpActivity.this,LoginActivity.class);
+                        ParseSetUp setup = new ParseSetUp(SignUpActivity.this);
+                        setup.register(editFirstName.getText().toString().trim(),editLastName.getText().toString().trim(),
+                                editEmail.getText().toString().trim(),editPassword.getText().toString().trim(),editMobile.getText().toString().trim());
+                       /* Intent i = new Intent(SignUpActivity.this,LoginActivity.class);
                         startActivity(i);
                         finish();
-                        Utils.showToastMessage(SignUpActivity.this, response.getMessage());
+                        Utils.showToastMessage(SignUpActivity.this, response.getMessage());*/
                     }else{
                         Utils.showToastMessage(SignUpActivity.this,getString(R.string.unable_to_process_request));
                     }
@@ -164,7 +171,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onErrorResponse(VolleyError error) {
                 if (mProgressDialog.isShowing()){
                     mProgressDialog.dismiss();
-                } Log.e(TAG, error.toString());
+                } Log.e(TAG,"On Error: "+ error.toString());
                 Utils.showToastMessage(SignUpActivity.this, getString(R.string.unable_to_process_request));
             }
         };

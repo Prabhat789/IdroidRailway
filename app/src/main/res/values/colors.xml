@@ -10,5 +10,6 @@
     <color name="smoke_white">#eaeaea</color>
     <color name="trans_sky_blue">#b300ADEF</color>
     <color name="trans_black">#b3000000</color>
+    <color name="login_btn">#f57365</color>
 
 </resources>

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.parse.ParseUser;
 import com.pktworld.railway.R;
 import com.pktworld.railway.fragments.AlertsFragment;
 import com.pktworld.railway.fragments.BookTicketFragment;
@@ -125,6 +127,9 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
                 title = getString(R.string.rating);
                 //title = "";
                 break;
+            case 7:
+                logoutUser();
+                break;
 
             default:
                 break;
@@ -157,6 +162,21 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
        }else {
            return false;
        }
+    }
+
+    private void logoutUser(){
+        SharedPreferences loginPreferences = getSharedPreferences(ApplicationConstants.LOGIN_PREFERENCE, MODE_PRIVATE);
+        SharedPreferences.Editor loginPrefsEditor = loginPreferences.edit();
+        loginPrefsEditor.clear();
+        loginPrefsEditor.commit();
+        ParseUser.logOut();
+        Intent i = new Intent(SlideMenuActivity.this, LoginActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+        finish();
+
+
     }
 }
 

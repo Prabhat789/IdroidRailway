@@ -2,13 +2,107 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center_horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Work in progress."
-        android:textSize="@dimen/very_large"
-        android:textColor="@color/title_clolor"/>
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:hint="Enter Train Number"
+        android:layout_marginTop="20dp"
+        android:id="@+id/editTrainNumber"
+        android:inputType="number"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@color/login_btn"
+        android:text="Search"
+        android:id="@+id/btnSearchGroup"
+        android:textSize="@dimen/medium_text"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/dark_grey"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layoutRecyclerList">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listGroup"
+            android:scrollbars="vertical"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layoutNoGroup">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Group not found for given Train Number, Please create a Group."
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/medium_text"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:id="@+id/txtTrainNumber"
+                android:textSize="@dimen/small_text"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:hint="Enter PNR Number"
+                android:layout_marginTop="20dp"
+                android:id="@+id/editPnrNumber"
+                android:inputType="number"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:background="@color/login_btn"
+                android:text="Create Group"
+                android:id="@+id/btnCreateGroup"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

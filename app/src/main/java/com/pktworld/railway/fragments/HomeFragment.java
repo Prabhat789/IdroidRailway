@@ -15,7 +15,7 @@ import com.pktworld.railway.R;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = HomeFragment.class.getSimpleName();
-    private Button btnHome, btnCharRoom, btnBookTicket;
+    private Button btnHome, btnCharRoom;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
