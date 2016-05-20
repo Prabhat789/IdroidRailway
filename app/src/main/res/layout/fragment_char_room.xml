@@ -7,10 +7,12 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="45dp"
-        android:hint="Enter Train Number"
+        android:hint="Enter PNR Number"
         android:layout_marginTop="20dp"
         android:id="@+id/editTrainNumber"
         android:inputType="number"
+        android:maxLength="10"
+        android:singleLine="true"
         android:textColor="@android:color/black"/>
 
     <Button
