@@ -23,8 +23,8 @@
         android:name=".parseutils.RailwayApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.LoginActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        <activity android:name=".activity.SlideMenuActivity"
+            android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -32,8 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SlideMenuActivity"
-            android:theme="@style/MyMaterialTheme"
+        <activity android:name=".activity.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait">
 
@@ -119,6 +119,13 @@
 
         <activity
             android:name=".parseutils.OneToOneChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/MyMaterialTheme">
+
+        </activity>
+        <activity
+            android:name=".parseutils.GotBoardActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/MyMaterialTheme">

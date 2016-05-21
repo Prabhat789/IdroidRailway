@@ -12,6 +12,7 @@ import com.pktworld.railway.R;
 import com.pktworld.railway.activity.BookTicketActivity;
 import com.pktworld.railway.activity.SettingActivity;
 import com.pktworld.railway.activity.TrainInfoActivity;
+import com.pktworld.railway.parseutils.GotBoardActivity;
 
 /**
  * Created by Prabhat on 25/03/16.
@@ -29,9 +30,11 @@ public class FragmentInHome extends Fragment implements View.OnClickListener{
         llTrainInfo = (LinearLayout)rootView.findViewById(R.id.llTrainInfo);
         llBookTickets = (LinearLayout)rootView.findViewById(R.id.llBookTicket);
         llSettings = (LinearLayout)rootView.findViewById(R.id.llSettings);
+        llGotBoard = (LinearLayout)rootView.findViewById(R.id.llGotBoard);
         llBookTickets.setOnClickListener(this);
         llTrainInfo.setOnClickListener(this);
         llSettings.setOnClickListener(this);
+        llGotBoard.setOnClickListener(this);
 
         return rootView;
 
@@ -48,6 +51,9 @@ public class FragmentInHome extends Fragment implements View.OnClickListener{
             startActivity(i);
         }else if (v == llSettings){
             Intent i = new Intent(getContext(), SettingActivity.class);
+            startActivity(i);
+        }else if (v == llGotBoard){
+            Intent i = new Intent(getContext(), GotBoardActivity.class);
             startActivity(i);
         }
     }

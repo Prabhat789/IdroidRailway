@@ -2,6 +2,8 @@ package com.pktworld.railway.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pktworld.railway.R;
+import com.pktworld.railway.activity.LoginActivity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -173,6 +176,23 @@ public class Utils {
 
 
         return ((int) dayCount);
+    }
+
+
+    public boolean isLogin(){
+        SharedPreferences loginPreferences = mContext.getSharedPreferences(ApplicationConstants.LOGIN_PREFERENCE, mContext.MODE_PRIVATE);
+        SharedPreferences.Editor loginPrefsEditor = loginPreferences.edit();
+        loginPrefsEditor = loginPreferences.edit();
+        boolean saveLogin = loginPreferences.getBoolean(ApplicationConstants.SAVE_LOGIN, false);
+        if (saveLogin == true){
+            return true;
+        }else {
+            Intent i = new Intent(mContext, LoginActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mContext.startActivity(i);
+            return false;
+        }
     }
 
 }

@@ -50,6 +50,9 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slidemenu);
+        Utils utils = new Utils(this);
+        if (!utils.isLogin())
+            finish();
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,7 +29,6 @@ import com.pktworld.railway.R;
 import com.pktworld.railway.model.PnrResponse;
 import com.pktworld.railway.parseutils.Group;
 import com.pktworld.railway.parseutils.OneToOneChatActivity;
-import com.pktworld.railway.parseutils.SpacesItemDecoration;
 import com.pktworld.railway.util.ApplicationConstants;
 import com.pktworld.railway.util.GsonRequestResponseHelper;
 import com.pktworld.railway.util.Utils;
@@ -59,11 +57,11 @@ public class ChatRoomFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_char_room, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         /*LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mMessageReceiver,
                 new IntentFilter(ApplicationConstants.GROUP_LIST_ADAPTER));*/
 
-        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.listGroup);
+       /* mRecyclerView = (RecyclerView)rootView.findViewById(R.id.listGroup);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.addItemDecoration(new SpacesItemDecoration(8));
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -80,7 +78,7 @@ public class ChatRoomFragment extends Fragment implements View.OnClickListener{
         layoutRecyclerList.setVisibility(View.GONE);
         btnSearchGroup.setOnClickListener(this);
         btnCreateGroup.setOnClickListener(this);
-        group = new ArrayList<Group>();
+        group = new ArrayList<Group>();*/
 
         return rootView;
 
@@ -293,6 +291,8 @@ public class ChatRoomFragment extends Fragment implements View.OnClickListener{
                         String chartPrepared = response.getChart_prepared();
                         if (chartPrepared.equalsIgnoreCase("Y")){
                             SearchGroup(txtTrainNumber+" "+trainName);
+                        }else {
+                            Utils.showToastMessage(getActivity(),"Chart Not Prepared at yet");
                         }
                         /*txtPnr.setText("PNR : "+response.getPnr());
                         txtDoj.setText("Date Of Journey : "+response.getDoj());
@@ -317,6 +317,7 @@ public class ChatRoomFragment extends Fragment implements View.OnClickListener{
                         mProgressDialog.dismiss();
                     }
                     Log.e(TAG, "TryCatch");
+                    Utils.showToastMessage(getActivity(),"Unable to get PNR status");
                 }
             };
         };
@@ -329,6 +330,7 @@ public class ChatRoomFragment extends Fragment implements View.OnClickListener{
                 if (mProgressDialog.isShowing()){
                     mProgressDialog.dismiss();
                 } Log.e(TAG, "Error");
+                Utils.showToastMessage(getActivity(),"Unable to get PNR status");
             }
         };
     }
