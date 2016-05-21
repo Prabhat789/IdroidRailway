@@ -222,7 +222,7 @@ public class GotBoardActivity extends AppCompatActivity implements View.OnClickL
                         }
 
                     }else {
-                        com.pktworld.railway.util.Utils.showToastMessage(GotBoardActivity.this,response.getError());
+                        com.pktworld.railway.util.Utils.showToastMessage(GotBoardActivity.this,"Invalid PNR Number");
                     }
 
                 } catch (Exception e) {

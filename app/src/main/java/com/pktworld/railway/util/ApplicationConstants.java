@@ -5,6 +5,7 @@ package com.pktworld.railway.util;
  */
 public class ApplicationConstants {
 
+    public static final String APPLICATION_NAME = "Railway";
     public static final String RAILWAY_API_KEY = "uyhif2848";
     public static final String RAILWAY_API_URL = "http://api.railwayapi.com/";
     public static final String TEXT_LIGHT_HELVETICA = "HelveticaNeue-Light.otf";

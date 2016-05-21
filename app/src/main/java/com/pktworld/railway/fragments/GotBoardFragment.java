@@ -273,7 +273,7 @@ public class GotBoardFragment extends Fragment implements View.OnClickListener{
                         if (chartPrepared.equalsIgnoreCase("Y")){
                             SearchGroup(txtTrainNumber+" "+trainName);
                         }else {
-                            Utils.showToastMessage(getActivity(),"Chart Not Prepared at yet");
+                            Utils.showToastMessage(getActivity(),"Chart Not Prepared at");
                         }
                         /*txtPnr.setText("PNR : "+response.getPnr());
                         txtDoj.setText("Date Of Journey : "+response.getDoj());
@@ -289,7 +289,7 @@ public class GotBoardFragment extends Fragment implements View.OnClickListener{
 
 
                     }else {
-                        Utils.showToastMessage(getActivity(),response.getError());
+                        Utils.showToastMessage(getActivity(),"Invalid PNR Number");
                     }
 
                 } catch (Exception e) {

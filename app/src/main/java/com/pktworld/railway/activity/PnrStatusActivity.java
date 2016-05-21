@@ -162,7 +162,7 @@ public class PnrStatusActivity extends AppCompatActivity implements View.OnClick
 
 
                     }else {
-                        Utils.showToastMessage(PnrStatusActivity.this,response.getError());
+                        Utils.showToastMessage(PnrStatusActivity.this,"Invalid PNR Number");
                     }
 
                 } catch (Exception e) {
