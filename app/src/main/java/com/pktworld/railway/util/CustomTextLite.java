@@ -10,8 +10,6 @@ import android.widget.TextView;
  * Created by ubuntu1 on 24/2/16.
  */
 public class CustomTextLite extends TextView {
-
-
     public CustomTextLite(Context context) {
         super(context);
         Typeface face = Typeface.createFromAsset(context.getAssets(), ApplicationConstants.TEXT_LIGHT_HELVETICA);

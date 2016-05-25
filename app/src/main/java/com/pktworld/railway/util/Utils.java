@@ -106,78 +106,50 @@ public class Utils {
     public static int get_count_of_days(String Created_date_String,String Expire_date_String) {
         Log.e(TAG,"CurrentDate : "+Created_date_String+" ,Enddate : "+Expire_date_String);
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-
         Date Created_convertedDate=null,Expire_CovertedDate=null,todayWithZeroTime=null;
-        try
-        {
+        try {
             Created_convertedDate = dateFormat.parse(Created_date_String);
             Expire_CovertedDate = dateFormat.parse(Expire_date_String);
-
             Date today = new Date();
-
             todayWithZeroTime =dateFormat.parse(dateFormat.format(today));
-        } catch (ParseException e)
-        {
+        } catch (ParseException e) {
             e.printStackTrace();
         }
-
-
         int c_year=0,c_month=0,c_day=0;
-
-        if(Created_convertedDate.after(todayWithZeroTime))
-        {
+        if(Created_convertedDate.after(todayWithZeroTime)) {
             Calendar c_cal = Calendar.getInstance();
             c_cal.setTime(Created_convertedDate);
-
             c_year = c_cal.get(Calendar.YEAR);
             c_month = c_cal.get(Calendar.MONTH);
             c_day = c_cal.get(Calendar.DAY_OF_MONTH);
-
-        }
-        else
-        {
+        }else {
             Calendar c_cal = Calendar.getInstance();
             c_cal.setTime(todayWithZeroTime);
-
             c_year = c_cal.get(Calendar.YEAR);
             c_month = c_cal.get(Calendar.MONTH);
             c_day = c_cal.get(Calendar.DAY_OF_MONTH);
         }
-
-
             /*Calendar today_cal = Calendar.getInstance();
             int today_year = today_cal.get(Calendar.YEAR);
             int today = today_cal.get(Calendar.MONTH);
             int today_day = today_cal.get(Calendar.DAY_OF_MONTH);
             */
 
-
-
-
-
         Calendar e_cal = Calendar.getInstance();
         e_cal.setTime(Expire_CovertedDate);
-
         int e_year = e_cal.get(Calendar.YEAR);
         int e_month = e_cal.get(Calendar.MONTH);
         int e_day = e_cal.get(Calendar.DAY_OF_MONTH);
-
         Calendar date1 = Calendar.getInstance();
         Calendar date2 = Calendar.getInstance();
-
         date1.clear();
         date1.set(c_year, c_month, c_day);
         date2.clear();
         date2.set(e_year, e_month, e_day);
-
         long diff = date2.getTimeInMillis() - date1.getTimeInMillis();
-
         float dayCount = (float) diff / (24 * 60 * 60 * 1000);
-
-
         return ((int) dayCount);
     }
-
 
     public boolean isLogin(){
         SharedPreferences loginPreferences = mContext.getSharedPreferences(ApplicationConstants.LOGIN_PREFERENCE, mContext.MODE_PRIVATE);
