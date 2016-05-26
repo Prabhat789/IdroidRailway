@@ -19,6 +19,9 @@ import com.parse.SaveCallback;
 import com.pktworld.railway.R;
 import com.pktworld.railway.util.ApplicationConstants;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -194,7 +197,17 @@ public class OneToOneChatActivity extends AppCompatActivity {
                     public void done(ParseException e) {
                         if (e == null) {
                             receiveMessage();
-                            ParseSetUp.sendPush(groupName + ": " + body, myStrings);
+                            JSONObject object = new JSONObject();
+                            try{
+                                object.accumulate("objectId",friendObjectId);
+                                object.accumulate("groupName",userNmae);
+                                object.accumulate("message", groupName + ": " + body);
+                                ParseSetUp.sendPush(object.toString(), myStrings);
+                            }catch (JSONException e1){
+                                e1.printStackTrace();
+                                ParseSetUp.sendPush(groupName + ": " + body, myStrings);
+                            }
+
                         }
 
                     }

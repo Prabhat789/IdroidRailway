@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,7 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.parse.ParseUser;
 import com.pktworld.railway.R;
 import com.pktworld.railway.fragments.AlertsFragment;
 import com.pktworld.railway.fragments.BookTicketFragment;
@@ -28,6 +26,7 @@ import com.pktworld.railway.fragments.HomeFragment;
 import com.pktworld.railway.fragments.RatingsFragments;
 import com.pktworld.railway.fragments.SettingsFragment;
 import com.pktworld.railway.util.ApplicationConstants;
+import com.pktworld.railway.util.UserSessionManager;
 import com.pktworld.railway.util.Utils;
 
 import java.text.SimpleDateFormat;
@@ -44,15 +43,14 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
     private FragmentDrawer drawerFragment;
     private int i = 0;
     private TextView mTitle;
-
+    private  UserSessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slidemenu);
-        Utils utils = new Utils(this);
-        if (!utils.isLogin())
-            finish();
+        sessionManager = new UserSessionManager(SlideMenuActivity.this);
+        sessionManager.checkLogin();
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -168,7 +166,7 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
     }
 
     private void logoutUser(){
-        SharedPreferences loginPreferences = getSharedPreferences(ApplicationConstants.LOGIN_PREFERENCE, MODE_PRIVATE);
+        /*SharedPreferences loginPreferences = getSharedPreferences(ApplicationConstants.LOGIN_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor loginPrefsEditor = loginPreferences.edit();
         loginPrefsEditor.clear();
         loginPrefsEditor.commit();
@@ -177,7 +175,8 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
-        finish();
+        finish();*/
+        sessionManager.logoutUser();
 
 
     }
