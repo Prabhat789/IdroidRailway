@@ -34,7 +34,7 @@ import java.util.Map;
 public class SignUpActivity extends Activity implements View.OnClickListener{
     private static final String TAG = SignUpActivity.class.getSimpleName();
     private Button btnSignUp;
-    private EditText editEmail,editPassword,editFirstName,editLastName,editMobile,editConPass;
+    private EditText editEmail,editPassword,editFirstName,editLastName,editConPass;
     private ProgressDialog mProgressDialog;
     private RequestQueue mRequestQueue;
 
@@ -56,7 +56,7 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         editPassword = (EditText)findViewById(R.id.editPassword);
         editFirstName = (EditText)findViewById(R.id.editFirstName);
         editLastName = (EditText)findViewById(R.id.editLastName);
-        editMobile = (EditText)findViewById(R.id.editMobile);
+       // editMobile = (EditText)findViewById(R.id.editMobile);
         editConPass = (EditText)findViewById(R.id.editConPassword);
         btnSignUp = (Button)findViewById(R.id.btnSignUp);
 
@@ -101,9 +101,9 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         params.put("lsLastName",editLastName.getText().toString().trim());
         params.put("lsEmailId", editEmail.getText().toString().trim());
         params.put("lsPassword", editPassword.getText().toString().trim());
-        params.put("lsCellphone",editMobile.getText().toString().trim());
-        params.put("lsParentPhone",editMobile.getText().toString().trim());
-        params.put("lsParentPhone2",editMobile.getText().toString().trim());
+        params.put("lsCellphone","");
+        params.put("lsParentPhone","");
+        params.put("lsParentPhone2","");
         params.put("lsDob","07/10/1988");
         params.put("lsAddress", "Unknown");
         params.put("lsState", "Unknown");
@@ -148,7 +148,7 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                     if (response.getResponse().equals("Success")){
                         ParseSetUp setup = new ParseSetUp(SignUpActivity.this);
                         setup.register(editFirstName.getText().toString().trim(),editLastName.getText().toString().trim(),
-                                editEmail.getText().toString().trim(),editPassword.getText().toString().trim(),editMobile.getText().toString().trim());
+                                editEmail.getText().toString().trim(),editPassword.getText().toString().trim(),"1252565232");
                        /* Intent i = new Intent(SignUpActivity.this,LoginActivity.class);
                         startActivity(i);
                         finish();
@@ -188,10 +188,10 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         }else if (editEmail.getText().toString().trim().length() == 0 || editEmail.getText().toString().isEmpty()){
             Utils.showToastMessage(this,"Please enter Email");
             return  false;
-        }else if (editMobile.getText().toString().trim().length() == 0 || editMobile.getText().toString().isEmpty()){
+        }/*else if (editMobile.getText().toString().trim().length() == 0 || editMobile.getText().toString().isEmpty()){
             Utils.showToastMessage(this,"Please enter Mobile Number");
             return  false;
-        }else if (editPassword.getText().toString().trim().length() == 0 || editPassword.getText().toString().isEmpty()){
+        }*/else if (editPassword.getText().toString().trim().length() == 0 || editPassword.getText().toString().isEmpty()){
             Utils.showToastMessage(this,"Please enter Password");
             return  false;
         }else if (editConPass.getText().toString().trim().length() == 0 || editConPass.getText().toString().isEmpty()){

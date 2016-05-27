@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 
 import com.pktworld.railway.R;
 import com.pktworld.railway.activity.BookTicketActivity;
-import com.pktworld.railway.activity.SettingActivity;
 import com.pktworld.railway.activity.TrainInfoActivity;
 import com.pktworld.railway.parseutils.GotBoardActivity;
 
@@ -20,7 +19,7 @@ import com.pktworld.railway.parseutils.GotBoardActivity;
 public class FragmentInHome extends Fragment implements View.OnClickListener{
 
     private static final String TAG = FragmentInHome.class.getSimpleName();
-    private LinearLayout llTrainInfo,llAlerts,llBookTickets,llGotBoard,llSettings;
+    private LinearLayout llTrainInfo,llAlerts,llBookTickets,llGotBoard;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,11 +28,11 @@ public class FragmentInHome extends Fragment implements View.OnClickListener{
 
         llTrainInfo = (LinearLayout)rootView.findViewById(R.id.llTrainInfo);
         llBookTickets = (LinearLayout)rootView.findViewById(R.id.llBookTicket);
-        llSettings = (LinearLayout)rootView.findViewById(R.id.llSettings);
+       // llSettings = (LinearLayout)rootView.findViewById(R.id.llSettings);
         llGotBoard = (LinearLayout)rootView.findViewById(R.id.llGotBoard);
         llBookTickets.setOnClickListener(this);
         llTrainInfo.setOnClickListener(this);
-        llSettings.setOnClickListener(this);
+       // llSettings.setOnClickListener(this);
         llGotBoard.setOnClickListener(this);
 
         return rootView;
@@ -49,10 +48,10 @@ public class FragmentInHome extends Fragment implements View.OnClickListener{
         }else if (v == llBookTickets){
             Intent i = new Intent(getActivity(), BookTicketActivity.class);
             startActivity(i);
-        }else if (v == llSettings){
+        }/*else if (v == llSettings){
             Intent i = new Intent(getContext(), SettingActivity.class);
             startActivity(i);
-        }else if (v == llGotBoard){
+        }*/else if (v == llGotBoard){
             Intent i = new Intent(getContext(), GotBoardActivity.class);
             startActivity(i);
         }

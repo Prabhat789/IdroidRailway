@@ -129,9 +129,9 @@ public class FragmentDrawer extends Fragment {
         model.add(2,new NavDrawerModel(getString(R.string.book_ticket),R.drawable.ic_home,2));
         model.add(3,new NavDrawerModel(getString(R.string.got_board),R.drawable.ic_home,3));
         model.add(4,new NavDrawerModel(getString(R.string.settings),R.drawable.ic_home,4));
-        model.add(5,new NavDrawerModel(getString(R.string.chat_room),R.drawable.ic_home,5));
-        model.add(6,new NavDrawerModel(getString(R.string.rating),R.drawable.ic_home,6));
-        model.add(7,new NavDrawerModel(getString(R.string.logout),0,7));
+       // model.add(5,new NavDrawerModel(getString(R.string.chat_room),R.drawable.ic_home,5));
+        model.add(5,new NavDrawerModel(getString(R.string.rating),R.drawable.ic_home,5));
+        model.add(6,new NavDrawerModel(getString(R.string.logout),0,6));
 
     }
 

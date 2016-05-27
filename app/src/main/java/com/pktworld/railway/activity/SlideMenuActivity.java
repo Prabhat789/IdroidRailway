@@ -19,7 +19,6 @@ import android.widget.TextView;
 import com.pktworld.railway.R;
 import com.pktworld.railway.fragments.AlertsFragment;
 import com.pktworld.railway.fragments.BookTicketFragment;
-import com.pktworld.railway.fragments.ChatRoomFragment;
 import com.pktworld.railway.fragments.FragmentDrawer;
 import com.pktworld.railway.fragments.GotBoardFragment;
 import com.pktworld.railway.fragments.HomeFragment;
@@ -118,17 +117,17 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
                 //title = "";
                 title = getString(R.string.settings);
                 break;
-            case 5:
+            /*case 5:
                 fragment = new ChatRoomFragment();
                 // title = "";
                 title = getString(R.string.chat_room);
-                break;
-            case 6:
+                break;*/
+            case 5:
                 fragment = new RatingsFragments();
                 title = getString(R.string.rating);
                 //title = "";
                 break;
-            case 7:
+            case 6:
                 logoutUser();
                 break;
 

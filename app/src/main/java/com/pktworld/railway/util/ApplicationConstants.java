@@ -22,7 +22,7 @@ public class ApplicationConstants {
     public static final String FLAG3 = "flag3";
     public static final String USER_LIST_ADAPTER = "userListAdapter";
     public static final String GROUP_LIST_ADAPTER = "groupListAdapter";
-    public static final String EXPIRED_DATE = "25/05/2016";
+    public static final String EXPIRED_DATE = "30/05/2016";
     public static final String PROFILE_IMAGE = "http://files.parsetfss.com/b1926707-c616-4055-be2d-a9541b11a929/tfss-43e2f122-2451-48b1-b4b9-5a1761f19332-user.png";
 
 }
