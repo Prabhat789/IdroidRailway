@@ -30,6 +30,8 @@ import com.pktworld.railway.util.ApplicationConstants;
 import com.pktworld.railway.util.GsonRequestResponseHelper;
 import com.pktworld.railway.util.Utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,7 +41,7 @@ import java.util.Map;
 public class LoginActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
-    private Button btnLogin, btnSignUp;
+    private Button btnLogin, btnSignUp,btnForgotPassword;
     private EditText editEmail,editPassword;
     private ProgressDialog mProgressDialog;
     private RequestQueue mRequestQueue;
@@ -55,11 +57,15 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+        if (isLycenceExpire()){
+            finish();
+        }
 
         editEmail = (EditText)findViewById(R.id.editEmail);
         editPassword = (EditText)findViewById(R.id.editPassword);
         btnLogin = (Button)findViewById(R.id.btnLogin);
         btnSignUp = (Button)findViewById(R.id.btnSignUp);
+        btnForgotPassword = (Button)findViewById(R.id.btnForgotPassword);
 
         saveLoginCheckBox = (CheckBox) findViewById(R.id.checkBox);
         loginPreferences = getSharedPreferences(ApplicationConstants.LOGIN_PREFERENCE, MODE_PRIVATE);
@@ -77,6 +83,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         btnLogin.setOnClickListener(this);
         btnSignUp.setOnClickListener(this);
+        btnForgotPassword.setOnClickListener(this);
     }
     public void hideSoftKeyboard() {
         InputMethodManager inputMethodManager = (InputMethodManager)  getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -130,6 +137,9 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             Intent i = new Intent(LoginActivity.this,SignUpActivity.class);
             startActivity(i);
 
+        }else if (v == btnForgotPassword){
+            Intent i = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
+            startActivity(i);
         }
 
 
@@ -141,7 +151,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             Utils.showToastMessage(this,"Please enter Email");
             return false;
         }else if (editPassword.getText().toString().trim().length() == 0 || editPassword.getText().toString().isEmpty()){
-            Utils.showToastMessage(this,"Please enter Password");
+            Utils.showToastMessage(this, "Please enter Password");
             return  false;
         }else{
             return true;
@@ -218,6 +228,20 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 } Log.e(TAG, error.toString());
             }
         };
+
+
+    }
+
+
+    private boolean isLycenceExpire(){
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+        int dayCount = Utils.get_count_of_days(currentDate, ApplicationConstants.EXPIRED_DATE);
+        if (dayCount <= 0){
+            Utils.showToastMessage(LoginActivity.this,"Licence Expired !");
+            return true;
+        }else {
+            return false;
+        }
     }
 
 

@@ -2,6 +2,85 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/login_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+            <com.pktworld.railway.util.CustomTextLite
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium_text"
+                android:text="Set Custom Ringtone"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:backgroundTint="@color/login_btn"
+                android:id="@+id/switch1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/smoke_white"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/view"
+            android:layout_marginTop="8dp"/>
+        
+        <com.pktworld.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text=""
+            android:id="@+id/txtRingtone"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/medium_text"
+            android:drawableRight="@drawable/ic_setting"
+            android:visibility="invisible"/>
+        <!--<com.pktworld.railway.util.CustomButton
+            android:layout_width="240dp"
+            android:layout_height="45dp"
+            android:background="@drawable/btn_rounded_corner_white"
+            android:textSize="@dimen/medium_text"
+            android:textColor="@color/trans_black"
+            android:layout_marginTop="25dp"
+            android:text="Get Ringtone List"
+            android:id="@+id/btnGetlistRingtone"
+            />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/listRingtone">
+
+        </ListView>-->
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

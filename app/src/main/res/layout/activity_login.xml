@@ -102,11 +102,21 @@
             android:textAllCaps="true"
             android:id="@+id/btnSignUp"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="80dp"
+            android:layout_above="@+id/btnForgotPassword"
+            android:layout_marginBottom="60dp"
             android:background="@color/login_btn"/>
 
-
+        <com.pktworld.railway.util.CustomButton
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text"
+            android:id="@+id/btnForgotPassword"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
 
     </RelativeLayout>

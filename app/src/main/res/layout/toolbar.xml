@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
-    android:background="@color/title_clolor"
+    android:background="@color/login_btn"
     android:elevation="5dp"
-    local:theme="@style/ThemeOverlay.AppCompat.Light"
-    local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+    local:theme="@style/ThemeOverlay.AppCompat.Dark"
+    local:popupTheme="@style/ThemeOverlay.AppCompat.Dark" >
 
-    <TextView
+    <com.pktworld.railway.util.CustomTextLite
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/medium_text"
         android:textStyle="bold"
         android:id="@+id/txtToolbar"
         android:layout_gravity="center"
-        android:textColor="@color/dark_grey"
+        android:textColor="@color/white"
         android:text=""/>
 
 </android.support.v7.widget.Toolbar>

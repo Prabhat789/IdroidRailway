@@ -10,6 +10,7 @@
     <uses-permission android:name="com.pktworld.railway.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <permission
@@ -111,6 +112,12 @@
 
         </activity>
         <activity android:name=".activity.SettingActivity"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".activity.ForgotPasswordActivity"
             android:theme="@style/MyMaterialTheme"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait">

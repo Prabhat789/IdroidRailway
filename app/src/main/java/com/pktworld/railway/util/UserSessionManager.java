@@ -25,8 +25,10 @@ public class UserSessionManager {
 	public static final String KEY_LAST_NAME = "lastName";
     public static final String KEY_USER_ID = "userId";
 	public static final String KEY_MAIL_ID = "mailId";
+	public static final String RINGTONE= "ringtone";
 
-    // Constructor
+
+	// Constructor
 	public UserSessionManager(Context context){
 		this._context = context;
 		pref = _context.getSharedPreferences(PREFER_NAME, PRIVATE_MODE);
@@ -79,9 +81,20 @@ public class UserSessionManager {
 		editor.putBoolean(IS_USER_LOGIN, true);
 		editor.putString(KEY_MAIL_ID, mailid);
 		editor.putString(KEY_USER_ID, userid);
-		Log.e(TAG,editor.toString());
+		Log.e(TAG, editor.toString());
 		// commit changes
 		editor.commit();
+	}
+
+	public void setRingtone(String ringtone){
+
+		editor.putString(RINGTONE,ringtone);
+		editor.commit();
+
+	}
+
+	public String getRingtone(){
+		return pref.getString(RINGTONE,"Unknown ringtone");
 	}
 
 	/**
