@@ -51,6 +51,7 @@ public class SlideMenuActivity extends AppCompatActivity implements FragmentDraw
         sessionManager = new UserSessionManager(SlideMenuActivity.this);
         sessionManager.checkLogin();
 
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         mTitle = (TextView) mToolbar.findViewById(R.id.txtToolbar);

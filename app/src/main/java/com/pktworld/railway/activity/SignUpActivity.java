@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -104,7 +105,7 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         params.put("lsCellphone","");
         params.put("lsParentPhone","");
         params.put("lsParentPhone2","");
-        params.put("lsDob","07/10/1988");
+       // params.put("lsDob","07/10/1988");
         params.put("lsAddress", "Unknown");
         params.put("lsState", "Unknown");
         params.put("lsCity", "Unknown");
@@ -125,8 +126,55 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                 ServiceResponse.class,
                 params,
                 createMyReqSuccessListener(),
-                createMyReqErrorListener());
+                createMyReqErrorListener()){
 
+        /*StringRequest myReq1 = new StringRequest(Request.Method.POST, REQUEST_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        if (mProgressDialog.isShowing()){
+                            mProgressDialog.dismiss();
+                        }
+                        try {
+                            Log.e(TAG,response.toString());
+
+                            JSONObject object = new JSONObject(response);
+                            String response1 = object.getString("");
+                            if (response1.equals("Success")){
+                                ParseSetUp setup = new ParseSetUp(SignUpActivity.this);
+                                setup.register(editFirstName.getText().toString().trim(),editLastName.getText().toString().trim(),
+                                        editEmail.getText().toString().trim(),editPassword.getText().toString().trim(),"1252565232");
+
+                            }else{
+                                Utils.showToastMessage(SignUpActivity.this,getString(R.string.unable_to_process_request));
+                            }
+
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+
+                            Log.e(TAG, "TryCatch");
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (mProgressDialog.isShowing()){
+                    mProgressDialog.dismiss();
+                } Log.e(TAG, error.toString());
+                Utils.showToastMessage(SignUpActivity.this, getString(R.string.unable_to_process_request));
+            }
+        });*/
+
+        @Override
+        public Map<String, String> getHeaders() throws AuthFailureError {
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("Content-Type", "application/x-www-form-urlencoded");
+            return params;
+        }
+    };
         myReq.setRetryPolicy(new DefaultRetryPolicy(
                 ApplicationConstants.MY_SOCKET_TIMEOUT_MS,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

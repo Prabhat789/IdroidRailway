@@ -57,7 +57,8 @@ public class UserSessionManager {
 		// Check login status
 		if(!this.isUserLoggedIn()){
 			Intent i = new Intent(_context, LoginActivity.class);
-			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+			//i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 			_context.startActivity(i);
 
 			return true;
