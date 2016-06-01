@@ -16,7 +16,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Live Status"
@@ -26,7 +26,7 @@
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnLiveStatus" />
 
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="PNR Status"
@@ -36,7 +36,7 @@
                 android:elevation="5dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnPnrStatus" />
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Seat Availability"
@@ -46,7 +46,7 @@
                 android:elevation="5dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnSeatAvailability" />
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Fare Enquiry"
@@ -56,7 +56,7 @@
                 android:elevation="5dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnFareEnqury" />
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Train Route"
@@ -66,7 +66,7 @@
                 android:elevation="5dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnTrainRoute" />
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Train B/W Station"
@@ -76,7 +76,7 @@
                 android:elevation="5dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnTrainbwStation" />
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Cancelled Trains"
@@ -87,7 +87,7 @@
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnCancelTrain" />
 
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:text="Train Arri at Station"

@@ -35,7 +35,7 @@
                     android:background="@drawable/edit_rounded_corner_smoke_white"
                     android:textColor="@color/dark_grey"/>
 
-                <com.pktworld.railway.util.CustomButton
+                <com.idroidms.railway.util.CustomButton
                     android:layout_width="0dp"
                     android:layout_weight="0.40"
                     android:layout_height="40dp"
@@ -73,7 +73,7 @@
                         android:text="DAYS"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -81,7 +81,7 @@
                         android:text="SUN"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -89,7 +89,7 @@
                         android:text="MON"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -97,7 +97,7 @@
                         android:text="TUE"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -105,7 +105,7 @@
                         android:text="WED"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -113,7 +113,7 @@
                         android:text="THU"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -121,7 +121,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -145,7 +145,7 @@
                         android:text="AVAIL"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -153,7 +153,7 @@
                         android:id="@+id/txtSun"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -161,7 +161,7 @@
                         android:id="@+id/txtMon"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -169,7 +169,7 @@
                         android:gravity="center"
                         android:id="@+id/txtTue"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -177,7 +177,7 @@
                         android:id="@+id/txtWed"
                         android:gravity="center"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -185,7 +185,7 @@
                         android:gravity="center"
                         android:id="@+id/txtThu"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"
@@ -193,7 +193,7 @@
                         android:id="@+id/txtFri"
                         android:textColor="@color/white"
                         android:layout_weight="0.125"/>
-                    <com.pktworld.railway.util.CustomTextLite
+                    <com.idroidms.railway.util.CustomTextLite
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/very_small"

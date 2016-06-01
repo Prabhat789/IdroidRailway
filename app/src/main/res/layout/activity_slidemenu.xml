@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="com.pktworld.railway.fragments.FragmentDrawer"
+        android:name="com.idroidms.railway.fragments.FragmentDrawer"
         android:layout_width="270dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

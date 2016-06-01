@@ -70,7 +70,7 @@
                     android:gravity="center"
                     android:layout_marginTop="6dp"
                     android:orientation="horizontal">
-                    <com.pktworld.railway.util.CustomButton
+                    <com.idroidms.railway.util.CustomButton
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="0.50"
@@ -86,7 +86,7 @@
                         android:background="@drawable/btn_rounded_corner_yellow"
                         android:textColor="@color/white"/>
 
-                    <com.pktworld.railway.util.CustomButton
+                    <com.idroidms.railway.util.CustomButton
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="0.50"

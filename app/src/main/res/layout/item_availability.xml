@@ -10,13 +10,13 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/small_text"
             android:textColor="@color/dark_grey"
             android:id="@+id/txtDate"/>
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/small_text"

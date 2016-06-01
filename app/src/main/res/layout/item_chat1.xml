@@ -15,7 +15,7 @@
             android:layout_weight="0.20"
             android:gravity="center">
 
-            <com.pktworld.railway.parseutils.CircularImage
+            <com.idroidms.railway.parseutils.CircularImage
                 android:id="@+id/ivProfileLeft"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -63,7 +63,7 @@
             android:layout_weight="0.20"
             android:gravity="center">
 
-            <com.pktworld.railway.parseutils.CircularImage
+            <com.idroidms.railway.parseutils.CircularImage
                 android:id="@+id/ivProfileRight"
                 android:layout_width="64dp"
                 android:layout_height="64dp"

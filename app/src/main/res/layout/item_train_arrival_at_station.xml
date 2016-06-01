@@ -9,7 +9,7 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -17,7 +17,7 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/small_text"
             android:id="@+id/txtNumber"/>
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -25,7 +25,7 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/small_text"
             android:id="@+id/txtName"/>
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -33,7 +33,7 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/small_text"
             android:id="@+id/txtActArriv"/>
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -42,7 +42,7 @@
             android:textSize="@dimen/small_text"
             android:id="@+id/txtActDep"/>
 
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -50,7 +50,7 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/small_text"
             android:id="@+id/txtSchArr"/>
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -58,7 +58,7 @@
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/small_text"
             android:id="@+id/txtSchDep"/>
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -67,7 +67,7 @@
             android:textSize="@dimen/small_text"
             android:id="@+id/txtDelayArr"/>
 
-        <com.pktworld.railway.util.CustomTextLite
+        <com.idroidms.railway.util.CustomTextLite
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pktworld.railway">
+    package="com.idroidms.railway">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="com.pktworld.railway.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.idroidms.railway.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <permission
-        android:name="com.pktworld.railway.permission.C2D_MESSAGE"
+        android:name="com.idroidms.railway.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <application
@@ -171,7 +171,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.pktworld.railway" />
+                <category android:name="com.idroidms.railway" />
             </intent-filter>
         </receiver>
         <meta-data

@@ -49,7 +49,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_ciecle"
+                            android:src="@drawable/ic_train_info"
                             android:padding="5dp"
                             android:background="@android:color/transparent"/>
 
@@ -62,13 +62,13 @@
                         android:gravity="center_vertical"
                         android:orientation="vertical">
 
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Train Info"
                             android:textColor="@color/dark_grey"
                             android:textSize="@dimen/small_text"/>
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Get all Train info"
@@ -111,7 +111,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_ciecle"
+                            android:src="@drawable/ic_alerts"
                             android:padding="5dp"
                             android:background="@android:color/transparent"/>
 
@@ -124,13 +124,13 @@
                         android:gravity="center_vertical"
                         android:orientation="vertical">
 
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Alerts"
                             android:textColor="@color/dark_grey"
                             android:textSize="@dimen/small_text"/>
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Get info alerts."
@@ -173,7 +173,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_ciecle"
+                            android:src="@drawable/ic_book_ticket"
                             android:padding="5dp"
                             android:background="@android:color/transparent"/>
 
@@ -186,13 +186,13 @@
                         android:gravity="center_vertical"
                         android:orientation="vertical">
 
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Book Tickets"
                             android:textColor="@color/dark_grey"
                             android:textSize="@dimen/small_text"/>
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/dark_grey"
@@ -236,7 +236,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_ciecle"
+                            android:src="@drawable/ic_get_board"
                             android:padding="5dp"
                             android:background="@android:color/transparent"/>
 
@@ -249,13 +249,13 @@
                         android:gravity="center_vertical"
                         android:orientation="vertical">
 
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Got Board"
                             android:textColor="@color/dark_grey"
                             android:textSize="@dimen/small_text"/>
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/dark_grey"
@@ -314,13 +314,13 @@
                         android:gravity="center_vertical"
                         android:orientation="vertical">
 
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Settings"
                             android:textColor="@color/dark_grey"
                             android:textSize="@dimen/small_text"/>
-                        <com.pktworld.railway.util.CustomTextLite
+                        <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/dark_grey"

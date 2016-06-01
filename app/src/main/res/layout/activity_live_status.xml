@@ -52,7 +52,7 @@
                 android:background="@drawable/edit_rounded_corner_smoke_white"
                 android:textColor="@color/dark_grey"/>
 
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="0dp"
                 android:layout_weight="0.40"
                 android:layout_height="40dp"
@@ -65,7 +65,7 @@
                 android:background="@drawable/btn_rounded_corner_white"/>
         </LinearLayout>
 
-        <com.pktworld.railway.util.CustomButton
+        <com.idroidms.railway.util.CustomButton
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:text="Live Status"
@@ -87,14 +87,14 @@
             android:background="@color/dark_grey"
             android:layout_marginRight="20dp">
 
-            <com.pktworld.railway.util.CustomTextLite
+            <com.idroidms.railway.util.CustomTextLite
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:id="@+id/txtPosition"
                 android:text="Position : Train has reached Destination and late by 5 minutes."
                 android:textSize="@dimen/small_text"/>
-            <com.pktworld.railway.util.CustomTextLite
+            <com.idroidms.railway.util.CustomTextLite
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -102,7 +102,7 @@
                 android:text="Error :"
                 android:layout_marginTop="8dp"
                 android:textSize="@dimen/small_text"/>
-            <com.pktworld.railway.util.CustomTextLite
+            <com.idroidms.railway.util.CustomTextLite
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"

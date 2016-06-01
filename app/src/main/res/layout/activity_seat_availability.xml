@@ -87,7 +87,7 @@
             android:gravity="center"
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="0dp"
                 android:layout_weight="0.30"
                 android:layout_height="40dp"
@@ -102,7 +102,7 @@
                 android:background="@drawable/btn_rounded_corner_white"
                 android:textColor="@color/dark_grey"/>
 
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="0dp"
                 android:layout_weight="0.45"
                 android:layout_height="40dp"
@@ -118,7 +118,7 @@
                 android:layout_marginRight="4dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:textColor="@color/dark_grey"/>
-            <com.pktworld.railway.util.CustomButton
+            <com.idroidms.railway.util.CustomButton
                 android:layout_width="0dp"
                 android:layout_weight="0.25"
                 android:layout_height="40dp"
@@ -136,7 +136,7 @@
 
 
     </LinearLayout>
-    <com.pktworld.railway.util.CustomButton
+    <com.idroidms.railway.util.CustomButton
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:textSize="@dimen/medium_text"
@@ -164,20 +164,20 @@
                 android:orientation="vertical"
                 android:background="@color/dark_grey">
 
-                <com.pktworld.railway.util.CustomTextLite
+                <com.idroidms.railway.util.CustomTextLite
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/small_text"
                     android:textColor="@color/white"
                     android:id="@+id/txtTrainName"/>
-                <com.pktworld.railway.util.CustomTextLite
+                <com.idroidms.railway.util.CustomTextLite
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/small_text"
                     android:layout_marginTop="8dp"
                     android:textColor="@color/white"
                     android:id="@+id/txtTrainNumber"/>
-                <com.pktworld.railway.util.CustomTextLite
+                <com.idroidms.railway.util.CustomTextLite
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/small_text"
@@ -185,21 +185,21 @@
                     android:textColor="@color/white"
                     android:id="@+id/txtFrom"/>
 
-                <com.pktworld.railway.util.CustomTextLite
+                <com.idroidms.railway.util.CustomTextLite
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/small_text"
                     android:layout_marginTop="8dp"
                     android:textColor="@color/white"
                     android:id="@+id/txtTo"/>
-                <com.pktworld.railway.util.CustomTextLite
+                <com.idroidms.railway.util.CustomTextLite
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/small_text"
                     android:layout_marginTop="8dp"
                     android:textColor="@color/white"
                     android:id="@+id/txtLastUpdate1"/>
-                <com.pktworld.railway.util.CustomTextLite
+                <com.idroidms.railway.util.CustomTextLite
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/small_text"
