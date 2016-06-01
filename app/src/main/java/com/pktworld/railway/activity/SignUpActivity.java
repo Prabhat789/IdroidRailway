@@ -12,7 +12,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -102,9 +101,9 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         params.put("lsLastName",editLastName.getText().toString().trim());
         params.put("lsEmailId", editEmail.getText().toString().trim());
         params.put("lsPassword", editPassword.getText().toString().trim());
-        params.put("lsCellphone","");
-        params.put("lsParentPhone","");
-        params.put("lsParentPhone2","");
+       /* params.put("lsCellphone","1212545212");
+        params.put("lsParentPhone","2565232562");
+        params.put("lsParentPhone2","2565232562");
        // params.put("lsDob","07/10/1988");
         params.put("lsAddress", "Unknown");
         params.put("lsState", "Unknown");
@@ -112,7 +111,7 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         params.put("lsCountry", "Unknown");
         params.put("lsZipcode", "Unknown");
         params.put("lsLatitude", "Unknown");
-        params.put("lsLongitude", "Unknown");
+        params.put("lsLongitude", "Unknown");*/
 
 
         Log.e(TAG, REQUEST_URL+" "+params.toString());
@@ -126,9 +125,9 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                 ServiceResponse.class,
                 params,
                 createMyReqSuccessListener(),
-                createMyReqErrorListener()){
+                createMyReqErrorListener());
 
-        /*StringRequest myReq1 = new StringRequest(Request.Method.POST, REQUEST_URL,
+      /*  StringRequest myReq1 = new StringRequest(Request.Method.POST, REQUEST_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -136,11 +135,13 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                         if (mProgressDialog.isShowing()){
                             mProgressDialog.dismiss();
                         }
+
+                        Log.e(TAG,response.toString());
                         try {
-                            Log.e(TAG,response.toString());
+
 
                             JSONObject object = new JSONObject(response);
-                            String response1 = object.getString("");
+                            String response1 = object.getString("response");
                             if (response1.equals("Success")){
                                 ParseSetUp setup = new ParseSetUp(SignUpActivity.this);
                                 setup.register(editFirstName.getText().toString().trim(),editLastName.getText().toString().trim(),
@@ -166,15 +167,16 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                 } Log.e(TAG, error.toString());
                 Utils.showToastMessage(SignUpActivity.this, getString(R.string.unable_to_process_request));
             }
-        });*/
+        }){
 
         @Override
         public Map<String, String> getHeaders() throws AuthFailureError {
-            Map<String, String> params = new HashMap<String, String>();
-            params.put("Content-Type", "application/x-www-form-urlencoded");
-            return params;
+            Map<String, String> params1 = new HashMap<String, String>();
+            //params.put("Content-Type", "application/json");
+            params1.put("Content-Type","application/x-www-form-urlencoded");
+            return params1;
         }
-    };
+    };*/
         myReq.setRetryPolicy(new DefaultRetryPolicy(
                 ApplicationConstants.MY_SOCKET_TIMEOUT_MS,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
@@ -191,6 +193,7 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                 if (mProgressDialog.isShowing()){
                     mProgressDialog.dismiss();
                 }
+                Log.e(TAG,response.toString());
                 try {
 
                     if (response.getResponse().equals("Success")){

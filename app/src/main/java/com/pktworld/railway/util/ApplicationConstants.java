@@ -11,7 +11,7 @@ public class ApplicationConstants {
     public static final String TEXT_LIGHT_HELVETICA = "HelveticaNeue-Light.otf";
     public static final int MY_SOCKET_TIMEOUT_MS = 20000;
     public static final int DEFAULT_MAX_RETRIES = 2;
-    public static final String BASEURL = "http://www.railway.vacationdealsworld.com/userjson.asmx";
+    public static final String BASEURL = "http://railway.vacationdealsworld.com/userjson.asmx";
     public static final String IRCTC_URL = "https://www.irctc.co.in/eticketing/loginHome.jsf";
     public static final String LOGIN_PREFERENCE = "loginPrefs";
     public static final String SAVE_LOGIN = "saveLogin";
