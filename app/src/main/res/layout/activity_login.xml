@@ -73,10 +73,10 @@
                 android:layout_marginTop="8dp"
                 android:gravity="left|center_vertical"
                 android:layout_height="wrap_content"
-                android:text="  Save Password"
+                android:text="Remember Me"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/white"
-                />
+                android:checked="false" />
 
         </LinearLayout>
 

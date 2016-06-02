@@ -75,6 +75,7 @@ public class ParseSetUp {
             public void done(ParseException e) {
                 mProgressDialog.dismiss();
                 if (e == null) {
+                    AppUtils.showToastMessage(mContext,"User has been successfully created");
                     Intent i = new Intent(mContext, LoginActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     mContext.startActivity(i);

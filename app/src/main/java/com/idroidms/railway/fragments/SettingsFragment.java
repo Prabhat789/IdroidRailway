@@ -115,6 +115,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
             switch (requestCode) {
                 case 1:
                     Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+                    Log.e("TAG",uri.toString());
                     ringtone = RingtoneManager.getRingtone(getActivity(), uri);
                     String ringtoneTitle = ringtone.getTitle(getActivity());
                     session.setRingtone(ringtoneTitle);

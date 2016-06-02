@@ -33,7 +33,7 @@ import java.util.Map;
  */
 public class SignUpActivity extends Activity implements View.OnClickListener{
     private static final String TAG = SignUpActivity.class.getSimpleName();
-    private Button btnSignUp;
+    private Button btnSignUp,btnClearAll;
     private EditText editEmail,editPassword,editFirstName,editLastName,editConPass;
     private ProgressDialog mProgressDialog;
     private RequestQueue mRequestQueue;
@@ -60,8 +60,10 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
        // editMobile = (EditText)findViewById(R.id.editMobile);
         editConPass = (EditText)findViewById(R.id.editConPassword);
         btnSignUp = (Button)findViewById(R.id.btnSignUp);
+        btnClearAll = (Button)findViewById(R.id.btnClearAll);
 
         btnSignUp.setOnClickListener(this);
+        btnClearAll.setOnClickListener(this);
     }
 
     @Override
@@ -88,6 +90,12 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                     signUp(SignUpActivity.this, "/InsertCustomerRegistration");
                 }
             }
+        }else if(v == btnClearAll){
+            editFirstName.setText("");
+            editLastName.setText("");
+            editEmail.setText("");
+            editConPass.setText("");
+            editPassword.setText("");
         }
     }
 
@@ -205,6 +213,8 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
                         startActivity(i);
                         finish();
                         AppUtils.showToastMessage(SignUpActivity.this, response.getMessage());*/
+                    }else if (response.getResponse().equals("Unsuccess")){
+                        AppUtils.showToastMessage(SignUpActivity.this,response.getMessage());
                     }else{
                         AppUtils.showToastMessage(SignUpActivity.this,getString(R.string.unable_to_process_request));
                     }
@@ -234,17 +244,25 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         if (editFirstName.getText().toString().trim().length() == 0 || editFirstName.getText().toString().isEmpty()){
             AppUtils.showToastMessage(this,"Please enter First Name");
             return false;
-        }else if (editLastName.getText().toString().trim().length() == 0 || editLastName.getText().toString().isEmpty()){
+        }else if(editFirstName.getText().toString().length() < 6){
+            AppUtils.showToastMessage(this,"First Name should not be less then 6 digits");
+            return false;
+        }
+        else if (editLastName.getText().toString().trim().length() == 0 || editLastName.getText().toString().isEmpty()){
             AppUtils.showToastMessage(this,"Please enter Last Name");
             return  false;
-        }else if (editEmail.getText().toString().trim().length() == 0 || editEmail.getText().toString().isEmpty()){
+        }
+        else if (editEmail.getText().toString().trim().length() == 0 || editEmail.getText().toString().isEmpty()){
             AppUtils.showToastMessage(this,"Please enter Email");
             return  false;
-        }/*else if (editMobile.getText().toString().trim().length() == 0 || editMobile.getText().toString().isEmpty()){
-            AppUtils.showToastMessage(this,"Please enter Mobile Number");
+        }else if(!isEmailValid(editEmail.getText().toString().trim())){
+            AppUtils.showToastMessage(this,"Invalid email");
             return  false;
-        }*/else if (editPassword.getText().toString().trim().length() == 0 || editPassword.getText().toString().isEmpty()){
+        }else if (editPassword.getText().toString().trim().length() == 0 || editPassword.getText().toString().isEmpty()){
             AppUtils.showToastMessage(this,"Please enter Password");
+            return  false;
+        }else if (editPassword.getText().toString().trim().length() < 6 ){
+            AppUtils.showToastMessage(this,"Password should be greater then 6 digits");
             return  false;
         }else if (editConPass.getText().toString().trim().length() == 0 || editConPass.getText().toString().isEmpty()){
             AppUtils.showToastMessage(this,"Please re-enter Password");
@@ -257,6 +275,8 @@ public class SignUpActivity extends Activity implements View.OnClickListener{
         }
     }
 
-
+    boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 
 }

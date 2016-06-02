@@ -104,6 +104,7 @@ public class NotificationReceiver extends ParsePushBroadcastReceiver {
 
         mNotificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        //Uri sountUri = Tin
 
         /*Intent intent = new Intent(context,NotificationActivity.class);
         intent.putExtra("TYPE", "ONE");

@@ -103,13 +103,12 @@ public class UserSessionManager {
 	 * */
 	public void logoutUser(){
 		// Clearing all user data from Shared Preferences
-		editor.clear();
-		editor.commit();
+		/*editor.clear();
+		editor.commit();*/
         ParseUser.logOut();
 		Intent i = new Intent(_context, LoginActivity.class);
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
 		_context.startActivity(i);
 	}
 	

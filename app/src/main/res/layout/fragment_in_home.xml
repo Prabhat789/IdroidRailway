@@ -252,7 +252,7 @@
                         <com.idroidms.railway.util.CustomTextLite
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Got Board"
+                            android:text="@string/got_board"
                             android:textColor="@color/dark_grey"
                             android:textSize="@dimen/small_text"/>
                         <com.idroidms.railway.util.CustomTextLite

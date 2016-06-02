@@ -139,6 +139,17 @@
                 android:id="@+id/btnSignUp"
                 android:background="@color/login_btn"/>
 
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/white"
+                android:text="Clear All"
+                android:textAllCaps="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/btnClearAll"
+                android:background="@color/login_btn"/>
+
         </LinearLayout>
 
 

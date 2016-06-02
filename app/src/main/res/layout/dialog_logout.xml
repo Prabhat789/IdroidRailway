@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <com.idroidms.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Attention"
+            android:padding="5dp"
+            android:id="@+id/txtAttention"
+            android:textSize="@dimen/medium_text"
+            android:textColor="@android:color/black"
+            android:layout_alignParentTop="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/login_btn"
+            android:layout_below="@+id/txtAttention"
+            android:layout_marginTop="3dp"/>
+
+        <com.idroidms.railway.util.CustomTextLite
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/small_text"
+            android:text="Do you want to logout?"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_alignParentBottom="true">
+            <com.idroidms.railway.util.CustomButton
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:text="Yes"
+                android:id="@+id/btnLogout"
+                android:layout_weight="0.50"
+                android:layout_marginRight="5dp"
+                android:textSize="@dimen/small_text"
+                android:textColor="@color/white"
+                android:background="@color/login_btn"/>
+            <com.idroidms.railway.util.CustomButton
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:text="Cancel"
+                android:id="@+id/btnCancel"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/small_text"
+                android:textColor="@color/white"
+                android:background="@color/login_btn"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
