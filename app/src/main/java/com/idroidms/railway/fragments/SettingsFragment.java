@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -29,10 +31,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
     /*private Button btnGetRingtoneList;
     private ListView listRingtone;*/
     private Ringtone ringtone = null;
-    private Switch mSwitch;
+    private Switch mSwitch,mSwitchMuteNotification;
     private TextView txtRingtone;
     private View view;
     private UserSessionManager session;
+    private LinearLayout llSettings;
+    private RelativeLayout rlMuteNotification;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,22 +45,34 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
 
         mSwitch = (Switch)rootView.findViewById(R.id.switch1);
         txtRingtone = (TextView)rootView.findViewById(R.id.txtRingtone);
+        mSwitchMuteNotification = (Switch)rootView.findViewById(R.id.switch2);
+        rlMuteNotification = (RelativeLayout)rootView.findViewById(R.id.llNotification);
+        llSettings = (LinearLayout)rootView.findViewById(R.id.llSettings);
         view = (View)rootView.findViewById(R.id.view);
         session = new UserSessionManager(getActivity());
         txtRingtone.setOnClickListener(this);
+        rlMuteNotification.setOnClickListener(this);
 
         String ringTone = session.getRingtone();
         if (ringTone.equals("Unknown ringtone")){
             view.setVisibility(View.INVISIBLE);
             mSwitch.setChecked(false);
             mSwitch.setClickable(true);
-            txtRingtone.setVisibility(View.INVISIBLE);
+            txtRingtone.setVisibility(View.GONE);
+            llSettings.setVisibility(View.GONE);
         }else {
             mSwitch.setClickable(false);
             view.setVisibility(View.VISIBLE);
             mSwitch.setChecked(true);
             txtRingtone.setVisibility(View.VISIBLE);
+            llSettings.setVisibility(View.VISIBLE);
             txtRingtone.setText("Ringtone : "+ringTone);
+        }
+
+        if (session.getNotification().equals("No")){
+            mSwitchMuteNotification.setChecked(false);
+        }else{
+            mSwitchMuteNotification.setChecked(true);
         }
 
         mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -132,10 +148,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
                         view.setVisibility(View.INVISIBLE);
                         mSwitch.setChecked(false);
                         mSwitch.setClickable(true);
-                        txtRingtone.setVisibility(View.INVISIBLE);
+                        txtRingtone.setVisibility(View.GONE);
+                        llSettings.setVisibility(View.GONE);
                     }else {
                         view.setVisibility(View.VISIBLE);
                         txtRingtone.setVisibility(View.VISIBLE);
+                        llSettings.setVisibility(View.VISIBLE);
                         mSwitch.setChecked(true);
                         mSwitch.setClickable(false);
                         txtRingtone.setText("Ringtone : "+ringTone);
@@ -154,6 +172,15 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if (v == txtRingtone){
             getRingtonePicker();
+        }else if (v == rlMuteNotification){
+            if (session.getNotification().equals("No")){
+                session.setNotification("Yes");
+                mSwitchMuteNotification.setChecked(true);
+            }else{
+                session.setNotification("No");
+                mSwitchMuteNotification.setChecked(false);
+            }
+
         }
     }
 }

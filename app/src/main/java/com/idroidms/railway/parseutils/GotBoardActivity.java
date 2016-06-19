@@ -61,7 +61,7 @@ public class GotBoardActivity extends AppCompatActivity implements View.OnClickL
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView txtTitle = (TextView)findViewById(R.id.txtToolbar);
-        txtTitle.setText("Got Board");
+        txtTitle.setText(getString(R.string.got_board));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 

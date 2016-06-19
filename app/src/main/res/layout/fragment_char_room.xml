@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/login_bg"
     android:gravity="center_horizontal">
 
     <EditText
@@ -13,23 +13,26 @@
         android:id="@+id/editTrainNumber"
         android:inputType="number"
         android:maxLength="10"
+        android:backgroundTint="@color/login_btn"
+        android:textColorHint="@color/smoke_white"
         android:singleLine="true"
-        android:textColor="@android:color/black"/>
+        android:textColor="@color/white"/>
 
-    <Button
+    <com.idroidms.railway.util.CustomButton
         android:layout_width="250dp"
         android:layout_height="45dp"
         android:background="@color/login_btn"
-        android:text="Search"
+        android:text="Enter"
         android:id="@+id/btnSearchGroup"
         android:textSize="@dimen/medium_text"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:layout_marginTop="10dp"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/dark_grey"
+        android:background="@color/white"
         android:layout_marginTop="10dp"/>
 
     <LinearLayout

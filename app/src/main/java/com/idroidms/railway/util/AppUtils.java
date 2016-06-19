@@ -167,4 +167,10 @@ public class AppUtils {
         }
     }
 
+    public static String imageUploadTimeStamp(){
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+                .format(new Date());
+        return timeStamp;
+    }
+
 }

@@ -14,6 +14,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.idroidms.railway.R;
+import com.idroidms.railway.util.UserSessionManager;
 import com.parse.ParsePushBroadcastReceiver;
 
 import org.json.JSONException;
@@ -25,6 +26,7 @@ public class NotificationReceiver extends ParsePushBroadcastReceiver {
     private static final String TAG = NotificationReceiver.class.getSimpleName();
     private NotificationManager mNotificationManager;
     public static int NOTIFICATION_ID = 1;
+    private UserSessionManager session;
 
 
     /*@Override
@@ -45,9 +47,11 @@ public class NotificationReceiver extends ParsePushBroadcastReceiver {
 
     @Override
     protected void onPushReceive(Context context, Intent intent) {
-
+        session = new UserSessionManager(context);
         if (isAppIsInBackground(context)){
-            super.onPushReceive(context, intent);
+            if (session.getNotification().equals("Yes")){
+                super.onPushReceive(context, intent);
+            }
         }else {
             if (OneToOneChatActivity.isAppAlive == 1) {
                 OneToOneChatActivity.receiveMessage();

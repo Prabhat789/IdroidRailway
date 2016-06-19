@@ -2,10 +2,12 @@ package com.idroidms.railway.parseutils;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Patterns;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,6 +16,8 @@ import com.idroidms.railway.R;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -96,7 +100,15 @@ public class OneToOneChatListAdapter extends RecyclerView.Adapter<OneToOneChatLi
             e.printStackTrace();
         }
 
-        holder.txtBody.setText(mDataset.get(position).getBody());
+        if (isValidUrl(mDataset.get(position).getBody())){
+            holder.imagePic.setVisibility(View.VISIBLE);
+            holder.txtBody.setVisibility(View.GONE);
+            loadImage(mDataset.get(position).getBody(),holder.imagePic,mContext);
+        }else {
+            holder.imagePic.setVisibility(View.GONE);
+            holder.txtBody.setVisibility(View.VISIBLE);
+            holder.txtBody.setText(mDataset.get(position).getBody());
+        }
         holder.txtName.setText(mDataset.get(position).getUserName());
         //holder.txtUserName.setText(mDataset.get(position).getUserName() + " at " + mDataset.get(position).getDateTime());
         profileView.setOnClickListener(new View.OnClickListener() {
@@ -126,12 +138,17 @@ public class OneToOneChatListAdapter extends RecyclerView.Adapter<OneToOneChatLi
         //Ion.with(context).load(url).intoImageView(imageView);
         imageLoader.DisplayImage(url,imageView);
     }
+    public void loadImage( String url,ImageView imageView, Context context) {
+        //Ion.with(context).load(url).intoImageView(imageView);
+        imageLoader.DisplayImage(url,imageView);
+    }
 
     public class DataObjectHolder extends RecyclerView.ViewHolder {
 
         TextView txtBody,txtName;
         CircularImage imageLeft, imageRight;
         LinearLayout llBody;
+        ImageView imagePic;
 
         public DataObjectHolder(View itemView) {
             super(itemView);
@@ -140,9 +157,19 @@ public class OneToOneChatListAdapter extends RecyclerView.Adapter<OneToOneChatLi
             txtBody = (TextView) itemView.findViewById(R.id.txtBody);
             llBody = (LinearLayout) itemView.findViewById(R.id.llText);
             txtName = (TextView)itemView.findViewById(R.id.txtName);
+            imagePic = (ImageView)itemView.findViewById(R.id.imgPic);
             //txtUserName = (TextView) itemView.findViewById(R.id.userName);
             //llBody = (LinearLayout)itemView.findViewById(R.id.llBody);
         }
 
+    }
+
+    private boolean isValidUrl(String url) {
+        Pattern p = Patterns.WEB_URL;
+        Matcher m = p.matcher(url);
+        if(m.matches())
+            return true;
+        else
+            return false;
     }
 }

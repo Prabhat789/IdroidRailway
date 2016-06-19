@@ -36,27 +36,72 @@
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/llSettings"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/smoke_white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/view"
+                android:layout_marginTop="8dp"/>
+
+            <com.idroidms.railway.util.CustomTextLite
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/txtRingtone"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:textSize="@dimen/medium_text"
+                android:drawableRight="@drawable/ic_setting" />
+        </LinearLayout>
+
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:background="@color/smoke_white"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:id="@+id/view"
+            android:id="@+id/view1"
             android:layout_marginTop="8dp"/>
-        
-        <com.idroidms.railway.util.CustomTextLite
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
             android:layout_marginRight="10dp"
-            android:text=""
-            android:id="@+id/txtRingtone"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:textSize="@dimen/medium_text"
-            android:drawableRight="@drawable/ic_setting"
-            android:visibility="invisible"/>
+            android:clickable="true"
+            android:id="@+id/llNotification"
+            android:layout_marginLeft="10dp">
+            <com.idroidms.railway.util.CustomTextLite
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:clickable="false"
+                android:textSize="@dimen/medium_text"
+                android:text="Mute Notification"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:backgroundTint="@color/login_btn"
+                android:id="@+id/switch2"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
         <!--<com.pktworld.railway.util.CustomButton
             android:layout_width="240dp"
             android:layout_height="45dp"

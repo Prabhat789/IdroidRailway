@@ -130,7 +130,13 @@ public class GotBoardFragment extends Fragment implements View.OnClickListener{
         if (v == btnSearchGroup){
             if (editTrainNumber.getText().toString().length() !=0 || !editTrainNumber.getText().toString().isEmpty()){
                 //getTrainName(getActivity());
-                getPnrStatus(getActivity());
+               // getPnrStatus(getActivity());
+
+                Intent i = new Intent(getActivity(), OneToOneChatActivity.class);
+                i.putExtra(ApplicationConstants.FLAG1, "5KD1BN1OCX");
+                i.putExtra(ApplicationConstants.FLAG2, "12345 Temp");
+                i.putExtra(ApplicationConstants.FLAG3,"12345 Temp");
+                startActivity(i);
             }else {
                 AppUtils.showToastMessage(getActivity(),"Please enter your PNR Number");
             }

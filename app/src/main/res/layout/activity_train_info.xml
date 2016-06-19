@@ -23,6 +23,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnLiveStatus" />
 
@@ -34,6 +35,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnPnrStatus" />
             <com.idroidms.railway.util.CustomButton
@@ -44,6 +46,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnSeatAvailability" />
             <com.idroidms.railway.util.CustomButton
@@ -54,6 +57,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnFareEnqury" />
             <com.idroidms.railway.util.CustomButton
@@ -64,6 +68,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnTrainRoute" />
             <com.idroidms.railway.util.CustomButton
@@ -74,6 +79,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnTrainbwStation" />
             <com.idroidms.railway.util.CustomButton
@@ -84,6 +90,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnCancelTrain" />
 
@@ -95,6 +102,7 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/medium_text"
                 android:elevation="5dp"
+                android:textAllCaps="false"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/btn_rounded_corner_white"
                 android:id="@+id/btnTrainArrivesAtStation" />

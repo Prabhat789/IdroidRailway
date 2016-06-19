@@ -88,7 +88,6 @@ public class UserSessionManager {
 	}
 
 	public void setRingtone(String ringtone){
-
 		editor.putString(RINGTONE,ringtone);
 		editor.commit();
 
@@ -98,6 +97,16 @@ public class UserSessionManager {
 		return pref.getString(RINGTONE,"Unknown ringtone");
 	}
 
+	public void setNotification(String ringtone){
+		editor.putString(RINGTONE,ringtone);
+		editor.commit();
+
+	}
+
+	public String getNotification(){
+		return pref.getString(RINGTONE,"Yes");
+	}
+
 	/**
 	 * Clear session details
 	 * */
@@ -105,10 +114,11 @@ public class UserSessionManager {
 		// Clearing all user data from Shared Preferences
 		/*editor.clear();
 		editor.commit();*/
+		editor.putBoolean(IS_USER_LOGIN, false);
+		editor.commit();
         ParseUser.logOut();
 		Intent i = new Intent(_context, LoginActivity.class);
-		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		_context.startActivity(i);
 	}
 	
